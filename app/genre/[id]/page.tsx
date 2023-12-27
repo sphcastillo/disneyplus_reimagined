@@ -13,7 +13,7 @@ function GenrePage({ params: { id }, searchParams: { genre }}: Props) {
     console.log("GenrePage props", { id, genre } );
 
     return (
-        <div className=''>Welcome to the genre with ID: {id} and name: {genre}</div>
+        <div className='bg-red-400'>Welcome to the genre with ID: {id} and name: {genre}</div>
     )
 }
 

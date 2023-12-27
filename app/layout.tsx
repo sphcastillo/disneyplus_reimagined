@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Disney Plus Clone',
+  title: 'Disney+ Clone',
   description: 'For educational purposes only. Please do not come after me, Disney!',
 }
 

@@ -21,7 +21,7 @@ async function GenreDropdown() {
             Authorization: `Bearer ${process.env.TMBD_API_KEY}`
         },
         next: {
-            revalidate: 60 * 60 * 24
+            revalidate: 60 * 60 * 24 
         }
     };
 

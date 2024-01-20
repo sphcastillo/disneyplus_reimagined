@@ -40,6 +40,7 @@ async function OpenAIAzureSuggestion({ term }: { term: string }) {
             maxTokens: 128,
         });
 
+        //loop thru the options that come back and push into array to return
         for(const choice of result.choices){
             console.log("choice message: ", choice.message);
             completions.push(choice.message);
@@ -48,8 +49,23 @@ async function OpenAIAzureSuggestion({ term }: { term: string }) {
         
     }
 
+    // Call the fetch function to get the completion
+    const completion = await fetchChatCompletion();
+
+    //render it out
+
     return (
-        <div>OpenAIAzureSuggestion</div>
+        <div className='flex space-x-5 mt-32 xl:mt-42 p-10 pb-0'>
+
+            <div className='animate-pulse rounded-full bg-gradient-to-t from-purple-400 h-10 w-10 border-2 flex-shrink-0 border-white'/>
+
+            <div>
+                <p className='text-sm text-purple-400'>
+                    Azure Open AI Assistant Suggests: {" "}
+                </p>
+                <p className='italic text-xl'>{completion?.content}</p>
+            </div>
+        </div>
     )
 }
 

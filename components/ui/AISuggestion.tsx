@@ -26,7 +26,8 @@ function AISuggestion({ term }: { term: string }) {
 
         if (error) return <>Error...</>;
         if (!data) return <>No data</>;
-    
+        
+        console.log("data: ", data);
 
     return (
         <>

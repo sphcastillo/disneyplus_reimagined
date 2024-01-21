@@ -2,6 +2,8 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const term = searchParams.get("term");
 
+    console.log("hit API >>>")
+
     const res = await fetch(`https://disney-plus-clone.azurewebsites.net/api/getaisuggestion?term=${term}`, {
         method: "GET",
         next: {
@@ -10,6 +12,7 @@ export async function GET(request: Request) {
     });
 
     const message = await res.text();
+    console.log("DEBUG >>>>", message);
 
     return Response.json({ message });
 }

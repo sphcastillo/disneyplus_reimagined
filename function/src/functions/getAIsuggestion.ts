@@ -9,7 +9,7 @@ import {
   
   import OpenAI from "openai";
   
-  const openai = new OpenAI({
+  const useOpenAI = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
   });
   
@@ -21,7 +21,7 @@ import {
     const term = request.query.get("term");
 
   
-    const completion = await openai.chat.completions.create({
+    const completion = await useOpenAI.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [
         {

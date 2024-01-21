@@ -21,7 +21,7 @@ function CarouselBanner({ movies }: Props) {
 
     return (
       <div 
-        className="overflow-hidden lg:-mt-40 relative cursor-pointer"
+        className="overflow-hidden lg:-mt-40 md:-mt-0 relative cursor-pointer"
         ref={emblaRef}
       >
         <div className="flex">

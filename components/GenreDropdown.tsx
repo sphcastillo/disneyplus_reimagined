@@ -33,7 +33,7 @@ async function GenreDropdown() {
             <DropdownMenuTrigger className="text-white flex justify-center items-center">
                 Genre <ChevronDown className='ml-1' />
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
+            <DropdownMenuContent className='z-[500]'>
                 <DropdownMenuLabel>Select a Genre</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 {data.genres.map((genre) => (

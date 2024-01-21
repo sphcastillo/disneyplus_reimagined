@@ -7,7 +7,7 @@ import {
     InvocationContext,
   } from "@azure/functions";
   
-  import OpenAI from "openai";
+import OpenAI from "openai";
   
   const useOpenAI = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,

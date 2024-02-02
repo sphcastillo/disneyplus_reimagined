@@ -23,7 +23,7 @@ function SearchInput() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
  
-    console.log(values);
+    console.log("values: ",values);
 
       // redirect to the page
       router.push(`/search/${values.input}`);

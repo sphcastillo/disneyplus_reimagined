@@ -35,11 +35,11 @@ import OpenAI from "openai";
         ],
       });
     
-      console.log(completion.choices[0]);
+      // console.log(completion.choices[0]);
     
       return { body: completion.choices[0].message.content || "No Suggestion" };
     } catch (error) {
-      console.log("ERROR >>>", error);
+      // console.log("ERROR >>>", error);
       return { body: error }
     }
   }

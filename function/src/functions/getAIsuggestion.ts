@@ -40,7 +40,7 @@ import OpenAI from "openai";
       return { body: completion.choices[0].message.content || "No Suggestion" };
     } catch (error) {
       console.log("ERROR >>>", error);
-      return { body: "ERROR: No Suggestion"}
+      return { body: error }
     }
   }
   

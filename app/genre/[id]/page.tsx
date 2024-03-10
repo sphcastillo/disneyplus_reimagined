@@ -20,7 +20,7 @@ async function GenrePage({ params: { id }, searchParams: { genre }}: Props) {
             <OpenAIAzureSuggestion term={genre}/>
 
             <div className="flex flex-col space-y-5 mt-32 xl:mt-42">
-                <h1 className="text-6xl font-bold px-10">Results from {genre}</h1>
+                <h1 className="text-3xl sm:text-5xl font-bold px-10">Results from {genre}</h1>
                 <MoviesCarousel title={`Genre`} movies={movies} isVertical/>
             </div>
         </div>

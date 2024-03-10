@@ -23,7 +23,7 @@ async function SearchPage({ params: { term } }: Props) {
     return (
         <div className='max-w-7xl mx-auto'>
             <div className='flex flex-col space-y-4 mt-32 xl:mt-42'>
-                <h1 className='text-6xl font-bold px-10'>Results for {termToUse}</h1>
+                <h1 className='text-3xl sm:text-5xl font-bold px-10'>Results for {termToUse}</h1>
 
                 <AISuggestion term={termToUse} />
                 <MoviesCarousel title="Movies" movies={movies} isVertical/>

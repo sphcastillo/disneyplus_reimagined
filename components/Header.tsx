@@ -5,6 +5,8 @@ import { ThemeToggler } from './ThemeToggler';
 import SearchInput from './SearchInput';
 import GenreDropdown from './GenreDropdown';
 
+import disneyPlusLogo from "@/images/disneyPluslogo.png";
+
 function Header() {
   return (
     <header 
@@ -12,10 +14,9 @@ function Header() {
     >
         <Link href="/" className='mr-10'>
             <Image
-                src="https://links.papareact.com/a943ae"
+                src={disneyPlusLogo}
                 alt="Disney logo"
                 width={120}
-                height={100}
                 className='cursor-pointer invert-0 dark:invert'
             />
         </Link>
@@ -28,4 +29,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Header;

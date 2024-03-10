@@ -42,7 +42,7 @@ async function OpenAIAzureSuggestion({ term }: { term: string }) {
 
         //loop thru the options that come back and push into array to return
         for(const choice of result.choices){
-            console.log("Genre Suggestion result: ", choice.message);
+            // console.log("Genre Suggestion result: ", choice.message);
             completions.push(choice.message);
         }
         return completions[0];

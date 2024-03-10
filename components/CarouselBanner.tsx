@@ -6,14 +6,29 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import getImagePath from "@/lib/getImagePath";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 type Props = {
     movies: Movie[]; 
 }
 
-Autoplay.globalOptions = { delay: 8000 };
+Autoplay.globalOptions = { delay: 6000 };
 
 function CarouselBanner({ movies }: Props) {
+    const containerRef = useRef<HTMLElement | null>(null);
+
+    useEffect(() => {
+      function updateHeight(){
+        if(containerRef.current){
+          const height = containerRef.current.clientHeight;
+          const newHeight = height * (3/4);
+          containerRef.current.style.height = `${height}px`;
+        }
+      }
+      window.addEventListener('resize', updateHeight);
+      updateHeight();
+      return () => window.removeEventListener('resize', updateHeight);
+    }, []);
 
     const [emblaRef] = useEmblaCarousel({ loop: true, duration: 100 }, [
       Autoplay(),
@@ -21,7 +36,13 @@ function CarouselBanner({ movies }: Props) {
 
     return (
       <div 
-        className="overflow-hidden lg:-mt-40 md:-mt-0 relative cursor-pointer"
+        className="overflow-hidden md:-mt-0 relative cursor-pointer"
+        // ref={(node) => {
+        //   if(node){
+        //     emblaRef(node);
+        //     containerRef.current = node;
+        //   }
+        // }}
         ref={emblaRef}
       >
         <div className="flex">
@@ -33,13 +54,13 @@ function CarouselBanner({ movies }: Props) {
                 key={movie.id}
                 alt="movie poster banner"
                 width={1920}
-                height={1080}
+                height={810}
                 src={getImagePath(movie.backdrop_path, true)}
               />
 
-              <div className="hidden lg:inline absolute mt-0 top-0 pt-40 xl:pt-52 left-0 lg:mt-40 bg-transparent z-20 h-full w-full bg-gradient-to-r from-gray-900/90 via-transparent to-transparent p-10 space-y-5 text-white">
-                <h2 className="text-5xl font-bold max-w-xl z-50">{movie.title}</h2>
-                <p className="max-w-xl line-clamp-3">{movie.overview}</p>
+              <div className="absolute mt-0 top-0 pt-40 sm:pt-48 xl:pt-52 left-0 bg-transparent z-20 h-full w-full bg-gradient-to-r from-gray-900/90 via-transparent to-transparent p-10 space-y-5 text-white">
+                <h2 className="text-2xl sm:text-4xl font-bold max-w-xl z-50">{movie.title}</h2>
+                <p className="text-[16px] sm:text-xl max-w-xl line-clamp-3">{movie.overview}</p>
               </div>
             </div>
           ))}

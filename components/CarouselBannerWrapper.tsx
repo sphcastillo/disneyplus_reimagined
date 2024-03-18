@@ -1,4 +1,5 @@
 import { getDiscoverMovies } from "@/lib/getMovies";
+import { getDiscoverTV } from "@/lib/getMovies";
 import CarouselBanner from "./CarouselBanner";
 
 type Props = {
@@ -9,9 +10,11 @@ type Props = {
 
 async function CarouselBannerWrapper({ id, keywords }: Props) {
     const movies = await getDiscoverMovies(id, keywords);
+    // const tv = await getDiscoverTV(id, keywords);
     return (
         <CarouselBanner movies={movies}/>
+
     )
 }
 
-export default CarouselBannerWrapper
+export default CarouselBannerWrapper;

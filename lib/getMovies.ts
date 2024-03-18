@@ -65,6 +65,7 @@ export async function getSearchedMovies(term: string) {
     return data.results;
 }
 
+/* MOVIES */
 export async function getNowPlayingMovies(){
     const url = new URL("https://api.themoviedb.org/3/movie/now_playing");
     const data = await fetchFromTMDB(url);
@@ -93,4 +94,12 @@ export async function getPopularMovies() {
     return data.results;
 };
 
+/* TELEVISION */
 
+
+export async function getDiscoverTV() {
+    const url = new URL("https://api.themoviedb.org/3/discover/tv");
+    const data = await fetchFromTMDB(url);
+
+    return data.results;
+};

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import './globals.css';
-import { ThemeProvider } from '@/components/ThemeProvider';
 import Header from '@/components/Header';
 
 
@@ -16,17 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='dark:bg-[#1A1C29] bg-white'>
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Header />
-            {children}
-        </ThemeProvider>
-        
+      <body className='bg-[#1A1C29]'>
+          <Header />
+          {children}
       </body>
     </html>
   )

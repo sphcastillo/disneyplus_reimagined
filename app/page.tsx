@@ -18,7 +18,7 @@ export default async function Home() {
       {/* <CarouselBannerWrapper /> */}
       <CastleBanner  />  
 
-      <div className='flex flex-col space-y-2 mt-11 lg:-mt-28'>
+      <div className='flex flex-col space-y-0 mt-0 lg:-mt-14'>
         <MoviesCarousel movies={topRatedMovies} title="Now Playing" />
         {/* <MoviesCarousel movies={topRatedMovies} title="Top Rated" /> */}
         <MoviesCarousel movies={discoverTV} title="Discover TV"/>

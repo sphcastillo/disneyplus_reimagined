@@ -26,8 +26,6 @@ function AISuggestion({ term }: { term: string }) {
 
         if (error) return <>Error...</>;
         if (!data) return <>No data</>;
-        
-        // console.log("data: ", data);
 
     return (
         <>
@@ -37,7 +35,7 @@ function AISuggestion({ term }: { term: string }) {
                 <p className="text-sm text-gray-400">
                     AI (Azure Functions) Assistant Suggests:{' '}
                 </p>
-                <p className="italic text-xl">&quot;{data.message}&quot;</p>
+                <p className="italic text-xl text-white">&quot;{data.message}&quot;</p>
             </div>
         </>
     );

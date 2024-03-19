@@ -1,7 +1,9 @@
 import { Movie } from '@/typings';
 import MovieCard from './MovieCard';
 import { cn } from '@/lib/utils';
+import { Quattrocento_Sans } from 'next/font/google';
 
+const quattrocentoSans = Quattrocento_Sans({ weight: "400", subsets: ['latin'] })
 
 type Props = {
     title?: string;
@@ -12,11 +14,12 @@ type Props = {
 function MoviesCarousel({ title, movies, isVertical }: Props) {
   return (
     <div className='z-50'>
-        <h2 className='text-xl font-bold px-10 py-2'>{title}</h2>
-
+      <div className={quattrocentoSans.className}>
+        <h2 className='text-lg font-bold text-white px-10 py-0'>{title}</h2>
+      </div>
         <div className={cn(
           "flex space-x-4 overflow-scroll px-5 lg:px-10 py-5 scrollbar-hide", 
-          isVertical && "flex-col space-x-0 space-y-12"
+          isVertical && "flex-col space-x-0 space-y-8"
         )}>
           {isVertical
             ? movies.map((movie) => (
@@ -29,11 +32,11 @@ function MoviesCarousel({ title, movies, isVertical }: Props) {
               >
                 <MovieCard movie={movie} />
                 <div className="max-w-2xl">
-                  <p className='font-bold'>
+                  <p className='font-bold text-white'>
                     {movie.title} ({movie.release_date?.split("-")[0]})
                   </p>
                   <hr className='mb-3'/>
-                  <p className=''>{movie.overview}</p>
+                  <p className='text-white'>{movie.overview}</p>
                 </div>
               </div>
             ))

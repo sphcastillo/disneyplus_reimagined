@@ -8,8 +8,12 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu";
-  import { ChevronDown } from 'lucide-react';
-  import Link from 'next/link';
+import { ChevronDown } from 'lucide-react';
+import Link from 'next/link';
+import { Ramabhadra } from 'next/font/google';
+
+
+const ramabhadra = Ramabhadra({ weight: "400", subsets: ['latin'] });
 
 async function GenreDropdown() {
     const url = "https://api.themoviedb.org/3/genre/movie/list?language=en";
@@ -31,14 +35,15 @@ async function GenreDropdown() {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger className="text-white flex justify-center items-center">
-                Genre <ChevronDown className='ml-1' />
+                <div className={ramabhadra.className}>Genre</div>
+                <ChevronDown className='ml-1' />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className='z-[500]'>
+            <DropdownMenuContent className='z-[500] bg-gradient-to-b from-[#14143C] to-[#142878] text-white'>
                 <DropdownMenuLabel>Select a Genre</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 {data.genres.map((genre) => (
-                    <DropdownMenuItem key={genre.id}>
-                        <Link href={`/genre/${genre.id}?genre=${genre.name}`}>
+                    <DropdownMenuItem key={genre.id} className=''>
+                        <Link href={`/genre/${genre.id}?genre=${genre.name}`} className=''>
                             {genre.name}
                         </Link>
                     </DropdownMenuItem>

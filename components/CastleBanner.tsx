@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Castle from "@/images/disneyCastle.png";
+import CastleGIF from "@/images/disneyCastleGif.gif";
 
 function CastleBanner() {
   return (
@@ -10,11 +11,13 @@ function CastleBanner() {
                     alt="Disney Studio Castle"
                     width={1920}
                     height={810}
-                    src={Castle}
+                    // src={Castle}
+                    src={CastleGIF}
+                    priority
                 />
             </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-200/0 via-gray-900/25 to-gray-300 dark:to-[#1A1C29]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-200/0 via-gray-900/5 to-[#1A1C29]" />
         
     </div>
   )

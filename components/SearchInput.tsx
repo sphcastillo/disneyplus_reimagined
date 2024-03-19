@@ -4,7 +4,11 @@ import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { Input } from "@/components/ui/input"
+import { Input } from "@/components/ui/input";
+import { Ramabhadra } from 'next/font/google';
+
+
+const ramabhadra = Ramabhadra({ weight: "400", subsets: ['latin'] });
 
 
 const formSchema = z.object({
@@ -23,7 +27,6 @@ function SearchInput() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
  
-    // console.log("values: ",values);
 
       // redirect to the page
       router.push(`/search/${values.input}`);
@@ -41,7 +44,9 @@ function SearchInput() {
           render={({ field}) => (
             <FormItem>
               <FormControl>
-                <Input placeholder="Search..." {...field} />
+                <div className={ramabhadra.className}>
+                  <Input placeholder="Search..." {...field} />
+                </div>
               </FormControl>
             </FormItem>
           )}

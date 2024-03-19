@@ -2,6 +2,7 @@ import Image from "next/image";
 import Castle from "@/images/disneyCastle.png";
 import CastleGIF from "@/images/disneyCastleGif.gif";
 
+
 function CastleBanner() {
   return (
     <div className="overflow-hidden md:-mt-0 relative cursor-pointer">

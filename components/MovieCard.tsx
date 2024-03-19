@@ -10,7 +10,7 @@ function MovieCard({ movie } : {movie: Movie}) {
         <div className="absolute inset-0 bg-gradient-to-b from-gray-200/0 via-gray-900/10 to-[#1A1C29]/80 z-10"/>
         {/* <p className='absolute z-20 bottom-5 left-5'>{movie.title}</p> */}
         <Image 
-            className='w-fit min-w-[210px] sm:min-w-[310px] lg:min-w-[360px] h-42 sm:h-56 object-cover object-center shadow-md shadow-gray-900 drop-shadow-xl rounded-sm'
+            className='w-fit max-w-[210px] h-32 sm:max-w-[230px] sm:h-34 md:max-w-[280px] md:h-42 object-cover object-center shadow-md shadow-gray-900 drop-shadow-xl rounded-sm'
             src= {getImagePath(movie.backdrop_path || movie.poster_path)}
             alt= {movie.title}
             width= {1920}

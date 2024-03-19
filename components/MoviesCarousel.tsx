@@ -14,9 +14,9 @@ type Props = {
 function MoviesCarousel({ title, movies, isVertical }: Props) {
   return (
     <div className='z-50'>
-      <div className={quattrocentoSans.className}>
+      {/* <div className={quattrocentoSans.className}>
         <h2 className='text-lg font-bold text-white px-10 py-0'>{title}</h2>
-      </div>
+      </div> */}
         <div className={cn(
           "flex space-x-4 overflow-scroll px-5 lg:px-10 py-5 scrollbar-hide", 
           isVertical && "flex-col space-x-0 space-y-8"
@@ -32,11 +32,15 @@ function MoviesCarousel({ title, movies, isVertical }: Props) {
               >
                 <MovieCard movie={movie} />
                 <div className="max-w-2xl">
-                  <p className='font-bold text-white'>
-                    {movie.title} ({movie.release_date?.split("-")[0]})
-                  </p>
-                  <hr className='mb-3'/>
-                  <p className='text-white'>{movie.overview}</p>
+                  <div className={quattrocentoSans.className}>
+                    <p className='font-bold text-white text-[20px]'>
+                      {movie.title} ({movie.release_date?.split("-")[0]})
+                    </p>
+                  </div>
+                  {/* <hr className='mb-3'/> */}
+                  <div className={quattrocentoSans.className}>
+                    <p className='text-white mt-3'>{movie.overview}</p>
+                  </div>
                 </div>
               </div>
             ))

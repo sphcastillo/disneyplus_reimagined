@@ -94,12 +94,6 @@ export async function getPopularMovies() {
     return data.results;
 };
 
-/* TELEVISION */
 
 
-export async function getDiscoverTV() {
-    const url = new URL("https://api.themoviedb.org/3/discover/tv");
-    const data = await fetchFromTMDB(url);
 
-    return data.results;
-};

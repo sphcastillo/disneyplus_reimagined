@@ -3,6 +3,11 @@ import {
     AzureKeyCredential,
     ChatResponseMessage,
 } from '@azure/openai';
+import { Hubballi } from 'next/font/google';
+
+
+const playball = Hubballi({ weight: "400", subsets: ['latin'] });
+
 
 // server component ~ with openAI service
 
@@ -63,7 +68,9 @@ async function OpenAIAzureSuggestion({ term }: { term: string }) {
                 <p className='text-sm text-purple-400'>
                     Azure Open AI Assistant Suggests: {" "}
                 </p>
-                <p className='italic text-xl text-white'>{completion?.content}</p>
+                <div className={playball.className}>
+                    <p className='italic text-[21px] text-white'>{completion?.content}</p>
+                </div>
             </div>
         </div>
     )

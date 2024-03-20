@@ -12,8 +12,8 @@ function CastleBanner() {
                     alt="Disney Studio Castle"
                     width={1920}
                     height={810}
-                    // src={Castle}
                     src={CastleGIF}
+                    unoptimized
                     priority
                 />
             </div>

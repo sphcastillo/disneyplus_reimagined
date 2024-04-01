@@ -1,5 +1,5 @@
 
-import CarouselBannerWrapper from '@/components/CarouselBannerWrapper';
+// import CarouselBannerWrapper from '@/components/CarouselBannerWrapper';
 import CastleBanner from '@/components/CastleBanner';
 import MoviesCarousel from '@/components/MoviesCarousel';
 import { getPopularMovies, getTopRatedMovies, getUpcomingMovies, getNowPlayingMovies } from '@/lib/getMovies';

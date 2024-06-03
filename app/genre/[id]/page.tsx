@@ -20,14 +20,17 @@ async function GenrePage({ params: { id }, searchParams: { genre }}: Props) {
     const movies = await getDiscoverMovies(id);
 
     return (
-        <div className='w-full bg-[#14143C]'>
-            <OpenAIAzureSuggestion term={genre}/>
+        <div className='max-w-7xl mx-auto bg-[#14143C]'>
+            <div className={ramabhadra.className}>
 
-            <div className="flex flex-col space-y-5 mt-10 xl:mt-42">
-                <div className={ramabhadra.className}>
-                    <h1 className="text-4xl sm:text-5xl font-bold px-10 text-white">Results from {genre}</h1>
+                {/* <OpenAIAzureSuggestion term={genre}/> */}
+
+                <div className="flex flex-col space-y-5 mt-10 xl:mt-42">
+                    <div className='pt-[65px] md:pt-[80px]'>
+                        <h1 className="text-4xl sm:text-5xl font-bold px-10 text-white">Results from {genre}</h1>
+                    </div>
+                    <MoviesCarousel title={`Genre`} movies={movies} isVertical/>
                 </div>
-                <MoviesCarousel title={`Genre`} movies={movies} isVertical/>
             </div>
         </div>
     )

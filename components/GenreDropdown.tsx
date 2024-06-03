@@ -24,6 +24,8 @@ async function GenreDropdown() {
             accept: "application/json",
             Authorization: `Bearer ${process.env.TMBD_API_KEY}`
         },
+        // same request will be cached for 24 hours
+        // ISR : Incremental Static Regeneration
         next: {
             revalidate: 60 * 60 * 24 
         }
@@ -31,6 +33,9 @@ async function GenreDropdown() {
 
     const response = await fetch(url, options);
     const data = (await response.json()) as Genres;
+
+    // showcase the genres
+    // console.log("genres: ", data.genres);
     
     return (
         <DropdownMenu>

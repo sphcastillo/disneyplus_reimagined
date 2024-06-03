@@ -39,6 +39,7 @@ export async function getDiscoverMovies(id?: string, keywords?: string) {
     return data.results;
 };
 
+// takes term and returns searched movies
 export async function getSearchedMovies(term: string) {
 
     const url = new URL("https://api.themoviedb.org/3/search/movie");
@@ -93,28 +94,5 @@ export async function getPopularMovies() {
 
     return data.results;
 };
-
-
-export async function getDiscoverTV() {
-    const url = new URL("https://api.themoviedb.org/3/discover/tv");
-    const data = await fetchFromTMDB(url);
-
-    return data.results;
-};
-
-export async function getTopRatedTV() {
-    const url = new URL("https://api.themoviedb.org/3/tv/top_rated")
-    const data = await fetchFromTMDB(url);
-
-    return data.results;
-}
-
-export async function getAiringTodayTV() {
-    const url = new URL("https://api.themoviedb.org/3/tv/airing_today")
-    const data = await fetchFromTMDB(url);
-
-    return data.results;
-}
-
 
 

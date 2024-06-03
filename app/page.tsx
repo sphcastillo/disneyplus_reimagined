@@ -1,9 +1,15 @@
 import CarouselBannerWrapper from '@/components/CarouselBannerWrapper';
 import CastleBanner from '@/components/CastleBanner';
 import MoviesCarousel from '@/components/MoviesCarousel';
-import { getPopularMovies, getTopRatedMovies, getUpcomingMovies, getNowPlayingMovies } from '@/lib/getMovies';
-import {  getDiscoverTV, getTopRatedTV, getAiringTodayTV } from '@/lib/getTV';
-
+import { 
+  getPopularMovies, 
+  getTopRatedMovies, 
+  getUpcomingMovies, 
+  getNowPlayingMovies, 
+  getDiscoverTV, 
+  getTopRatedTV, 
+  getAiringTodayTV 
+} from '@/lib/getMovies';
 
 export default async function Home() {
 
@@ -27,7 +33,6 @@ export default async function Home() {
         <MoviesCarousel movies={airingTodayTV} title="Airing Today TV" />
         <MoviesCarousel movies={topRatedTV} title="Top Rated TV" />
         <MoviesCarousel movies={discoverTV} title="Discover TV"/>
-
       </div>
     </main>
   )

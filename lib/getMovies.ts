@@ -95,5 +95,26 @@ export async function getPopularMovies() {
 };
 
 
+export async function getDiscoverTV() {
+    const url = new URL("https://api.themoviedb.org/3/discover/tv");
+    const data = await fetchFromTMDB(url);
+
+    return data.results;
+};
+
+export async function getTopRatedTV() {
+    const url = new URL("https://api.themoviedb.org/3/tv/top_rated")
+    const data = await fetchFromTMDB(url);
+
+    return data.results;
+}
+
+export async function getAiringTodayTV() {
+    const url = new URL("https://api.themoviedb.org/3/tv/airing_today")
+    const data = await fetchFromTMDB(url);
+
+    return data.results;
+}
+
 
 

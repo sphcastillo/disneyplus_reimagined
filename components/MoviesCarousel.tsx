@@ -5,10 +5,11 @@ import { Quattrocento_Sans } from 'next/font/google';
 
 const quattrocentoSans = Quattrocento_Sans({ weight: "400", subsets: ['latin'] })
 
+// props for the MoviesCarousel component
 type Props = {
-    title?: string;
-    movies: Movie[];
-    isVertical?: boolean;
+  title?: string;
+  movies: Movie[];
+  isVertical?: boolean;
 }
 
 function MoviesCarousel({ title, movies, isVertical }: Props) {

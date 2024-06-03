@@ -7,7 +7,6 @@ import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Ramabhadra } from 'next/font/google';
 
-
 const ramabhadra = Ramabhadra({ weight: "400", subsets: ['latin'] });
 
 
@@ -27,7 +26,6 @@ function SearchInput() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
  
-
       // redirect to the page
       router.push(`/search/${values.input}`);
       form.reset();
@@ -41,7 +39,7 @@ function SearchInput() {
         <FormField
           control={form.control}
           name="input"
-          render={({ field}) => (
+          render={({ field }) => (
             <FormItem>
               <FormControl>
                 <div className={ramabhadra.className}>

@@ -27,14 +27,16 @@ async function SearchPage({ params: { term } }: Props) {
     const popularMovies = await getPopularMovies();
 
     return (
-        <div className='w-full bg-[#14143C]'>
-            <div className='flex flex-col space-y-4 pt-10'>
-                <div className={ramabhadra.className}>
-                    <h1 className='text-3xl sm:text-5xl px-10 text-white'>Results for {termToUse}</h1>
+        <div className='max-w-7xl mx-auto bg-[#14143C]'>
+            <div className={ramabhadra.className}>
+                <div className='flex flex-col space-y-4 pt-10'>
+                    <div className='pt-[65px] md:pt-[80px]'>
+                        <h1 className='text-3xl sm:text-5xl px-10 text-white'>Results for {termToUse}</h1>
+                    </div>
+                    <AISuggestion term={termToUse} />
+                    <MoviesCarousel title="Movies" movies={movies} isVertical/>
+                    <MoviesCarousel title="You may also like..." movies={popularMovies} />
                 </div>
-                <AISuggestion term={termToUse} />
-                <MoviesCarousel title="Movies" movies={movies} isVertical/>
-                <MoviesCarousel title="You may also like..." movies={popularMovies} />
             </div>
         </div>
     )

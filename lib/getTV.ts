@@ -1,4 +1,4 @@
-import { SearchResults } from "@/typings";
+import { TVSearchResults } from "@/typings";
 
 async function fetchFromTMDB(url: URL, cacheTime?: number) {
 
@@ -21,7 +21,7 @@ async function fetchFromTMDB(url: URL, cacheTime?: number) {
 
 
     const response = await fetch(url.toString(), options);
-    const data = (await response.json()) as SearchResults;
+    const data = (await response.json()) as TVSearchResults;
 
     return data;
 

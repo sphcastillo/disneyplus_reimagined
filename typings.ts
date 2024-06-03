@@ -39,6 +39,14 @@ export type SearchResults = {
   total_results: number;
 };
 
+export type TVSearchResults = {
+  page: number;
+  results: Series[];
+  total_pages: number;
+  total_results: number;
+};
+
+
 export type Genre = {
     id: number;
     name: string;

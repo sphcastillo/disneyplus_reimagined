@@ -1,5 +1,5 @@
 import MoviesCarousel from "@/components/MoviesCarousel";
-import OpenAIAzureSuggestion from "@/components/ui/OpenAIAzureSuggestion";
+import OpenAIAzureSuggestion from "@/components/OpenAIAzureSuggestion";
 import { getDiscoverMovies } from "@/lib/getMovies";
 import { Ramabhadra } from 'next/font/google';
 

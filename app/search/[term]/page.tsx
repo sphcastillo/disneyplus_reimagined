@@ -14,8 +14,10 @@ type Props = {
 };
 
 async function SearchPage({ params: { term } }: Props) {
+    // If no term is provided, return a 404
     if (!term) notFound();
 
+    // Decode the term to use in the API call
     const termToUse = decodeURI(term); 
 
     // API call to get the searched movies

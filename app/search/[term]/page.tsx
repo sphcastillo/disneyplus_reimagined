@@ -1,5 +1,5 @@
 import MoviesCarousel from '@/components/MoviesCarousel';
-import AISuggestion from '@/components/ui/AISuggestion';
+import AISuggestion from '@/components/AISuggestion';
 import { getPopularMovies, getSearchedMovies } from '@/lib/getMovies';
 import { notFound } from 'next/navigation';
 import { Ramabhadra } from 'next/font/google';

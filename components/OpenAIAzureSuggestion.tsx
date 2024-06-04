@@ -20,7 +20,7 @@ async function OpenAIAzureSuggestion({ term }: { term: string }) {
         const endpoint = process.env.ENDPOINT;
         const azureApiKey = process.env.AZURE_API_KEY;
 
-        // console.log(`Using endpoint: ${endpoint} and Azure API Key: ${azureApiKey}`);
+        console.log(`Using endpoint: ${endpoint} and Azure API Key: ${azureApiKey}`);
 
         if(!endpoint) throw new Error("Missing endpoint");
         if(!azureApiKey) throw new Error("Missing Azure API Key");
@@ -30,7 +30,7 @@ async function OpenAIAzureSuggestion({ term }: { term: string }) {
             new AzureKeyCredential(azureApiKey)
         );
 
-        const deploymentId = 'DeployDisneyAIUsage';
+        const deploymentId = 'DisneyPlusAzureOpenAI';
 
         const result = await client.getChatCompletions(deploymentId, [
             {

@@ -1,3 +1,5 @@
+// https://disneyplus-ai-azure-function.azurewebsites.net/api/disneyplusaisuggest
+
 import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
 
 import OpenAI from 'openai';

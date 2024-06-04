@@ -2,6 +2,7 @@ import CarouselBannerWrapper from '@/components/CarouselBannerWrapper';
 import CastleBanner from '@/components/CastleBanner';
 import MoviesCarousel from '@/components/MoviesCarousel';
 import TVCarousel from '@/components/TVCarousel';
+
 import { 
   getPopularMovies, 
   getTopRatedMovies, 
@@ -29,6 +30,7 @@ export default async function Home() {
     <main className="pb-[60px]">
       <CastleBanner  />  
       <CarouselBannerWrapper />
+
       <div className='flex flex-col space-y-0 mt-0 sm:-mt-20 md:-mt-35'>
         <MoviesCarousel movies={popularMovies} title="Popular Movies" />
         <MoviesCarousel movies={topRatedMovies} title="Top Rated Movies" />

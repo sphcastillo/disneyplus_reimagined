@@ -18,7 +18,7 @@ function Header() {
                 className='cursor-pointer'
             />
         </Link>
-        <div className='flex space-x-7'>
+        <div className='flex space-x-4 md:space-x-7'>
             <GenreDropdown />
             <SearchInput />
         </div>

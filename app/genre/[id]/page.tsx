@@ -23,7 +23,7 @@ async function GenrePage({ params: { id }, searchParams: { genre }}: Props) {
         <div className='max-w-7xl mx-auto bg-[#14143C]'>
             <div className={ramabhadra.className}>
 
-                {/* <OpenAIAzureSuggestion term={genre}/> */}
+                <OpenAIAzureSuggestion term={genre}/>
 
                 <div className="flex flex-col space-y-5 mt-10 xl:mt-42">
                     <div className='pt-[65px] md:pt-[80px]'>

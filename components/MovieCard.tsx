@@ -17,7 +17,7 @@ import { Heading } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
 import { CloseButton } from '@chakra-ui/react'
 import { Button, ButtonGroup } from "@chakra-ui/react";
-
+import { Flex, Spacer } from '@chakra-ui/react'
 
 const ramabhadra = Ramabhadra({ weight: "400", subsets: ['latin'] });
 
@@ -45,7 +45,7 @@ function MovieCard({ movie } : { movie : Movie }) {
           />
       </div>
 
-      <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
+      <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose} size={{ base: "90%", md: "md" }}>
         <ModalOverlay />
         <ModalContent bgGradient='linear(to-b, #010048, #090088 )'>
         <CloseButton  
@@ -59,7 +59,8 @@ function MovieCard({ movie } : { movie : Movie }) {
                 color="brand.100"
                 _hover={{ background: "blue", color: "white"}}
               />
-          <Card maxW="md" bgGradient='linear(to-r, #140647, #200461)'>
+          <Flex justifyContent="center" alignItems="center">
+          <Card maxW={{ base: "90%", md: "md" }}  bgGradient='linear(to-b, #010048, #090088 )'>
             <CardBody>
               <Image
               src= {getImagePath(movie.backdrop_path || movie.poster_path)}
@@ -85,6 +86,7 @@ function MovieCard({ movie } : { movie : Movie }) {
               </ButtonGroup>
             </CardFooter>
           </Card>
+          </Flex>
         </ModalContent>
       </Modal>
     </>

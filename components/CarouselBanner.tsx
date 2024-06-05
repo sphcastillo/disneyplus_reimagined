@@ -6,7 +6,6 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import getImagePath from "@/lib/getImagePath";
 import Image from "next/image";
-import { useEffect } from "react";
 
 type Props = {
     movies: Movie[]; 
@@ -16,14 +15,9 @@ Autoplay.globalOptions = { delay: 6000 };
 
 function CarouselBanner({ movies }: Props) {
 
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 100 });
-
-    useEffect(() => {
-      if (emblaApi){
-        const autoplay = Autoplay(emblaApi);
-        autoplay.start();
-      }
-    }, [emblaApi]);
+    const [emblaRef] = useEmblaCarousel({ loop: true, duration: 100 }, [
+      Autoplay(),
+    ]);
 
     return (
       <div 

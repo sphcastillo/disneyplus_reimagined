@@ -14,7 +14,7 @@ type Props = {
 
 function TVCarousel({ title, tv, isVertical }: Props) {
   return (
-    <div className='z-50'>
+    <div className='z-20'>
         <div className={quattrocentoSans.className}>
           <h2 className="text-[20px] font-bold px-10 py-2 text-white">{title}</h2>
         </div>

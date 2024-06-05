@@ -9,7 +9,7 @@ import disneyPlusLogo from "@/images/disneyPluslogo.png";
 
 function Header() {
   return (
-    <header className='fixed flex items-center justify-between p-3 top-0 z-20 w-full bg-gradient-to-b from-[#14143C] to-[#141450]'>
+    <header className='fixed flex items-center justify-between p-3 top-0 z-50 w-full bg-gradient-to-b from-[#14143C] to-[#141450]'>
         <Link href="/" className='mr-10'>
             <Image
                 src={disneyPlusLogo}

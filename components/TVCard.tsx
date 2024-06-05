@@ -10,13 +10,9 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
 } from "@chakra-ui/react";
-import { Card, CardHeader, CardBody, CardFooter } from "@chakra-ui/react";
-import { Stack, HStack, VStack } from "@chakra-ui/react";
+import { Card, CardBody, CardFooter } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 import { Heading } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
 import { CloseButton } from '@chakra-ui/react'
@@ -28,7 +24,7 @@ const ramabhadra = Ramabhadra({ weight: "400", subsets: ["latin"] });
 function TVCard({ series }: { series: Series }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const finalRef = useRef(null);
-  console.log("series: ", series);
+  // console.log("series: ", series);
 
   return (
     <>
@@ -52,7 +48,6 @@ function TVCard({ series }: { series: Series }) {
         />
       </div>
 
-      <div className={ramabhadra.className}>
       <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent bgGradient='linear(to-b, #010048, #090088 )'>
@@ -95,7 +90,7 @@ function TVCard({ series }: { series: Series }) {
           </Card>
         </ModalContent>
       </Modal>
-      </div>
+
     </>
   );
 }

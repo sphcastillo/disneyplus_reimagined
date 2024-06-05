@@ -6,7 +6,7 @@ import CastleGIF from "@/images/disneyCastleGif.gif";
 function CastleBanner() {
   return (
     <div className="">
-      <div className="overflow-hidden md:-mt-0 relative cursor-pointer">
+      <div className="overflow-hidden mt-[64px] md:mt-3 relative cursor-pointer">
           <div className="flex lg:h-[578px] lg:max-w-6xl lg:mx-auto">
               <div className="flex-full min-w-0 relative">
                   <Image 

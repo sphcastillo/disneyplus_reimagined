@@ -14,11 +14,11 @@ NextJS 14, Microsoft Azure functions, Azure OpenAI, Caching, zod, TMDB database,
 
 ## Github Repository
 
-https://github.com/sphcastillo/disneyplusextreme_2024
+https://github.com/sphcastillo/disneyplusextreme_
 
 ## Deployed Site
 
-https://disneyplusextreme-2024.vercel.app
+https://www.builtbysophiadisneyplus.org
 
 ## More info
 

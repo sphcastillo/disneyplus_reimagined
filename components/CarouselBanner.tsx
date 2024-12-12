@@ -36,6 +36,7 @@ function CarouselBanner({ movies }: Props) {
                 alt="movie poster banner"
                 width={1920}
                 height={810}
+                priority
                 src={getImagePath(movie.backdrop_path, true)}
                 className="h-[245px] sm:h-[320px] rounded-sm object-cover object-center shadow-md shadow-gray-900 drop-shadow-xl"
               />

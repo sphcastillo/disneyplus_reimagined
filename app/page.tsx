@@ -30,6 +30,7 @@ export default async function Home() {
   return (
     <main className="pb-[60px]">
       <CastleBanner  />  
+      
       <DisneyCategories />
       <CarouselBannerWrapper />
 

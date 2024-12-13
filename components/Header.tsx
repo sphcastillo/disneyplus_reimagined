@@ -6,7 +6,6 @@ import GenreDropdown from "./GenreDropdown";
 import { MdOutlineMoreVert } from "react-icons/md";
 import disneyPlusLogo from "@/images/disneyPluslogo.png";
 import NavigationLinks from "./NavigationLinks";
-import GenreServerDropdown from "./GenreServerDropdown";
 
 function Header() {
   return (
@@ -28,7 +27,8 @@ function Header() {
         </div>
       </div>
       <div className="flex space-x-4 md:space-x-7">
-        <GenreServerDropdown />
+        <GenreDropdown />
+        {/* <GenreServerDropdown /> */}
         <SearchInput />
       </div>
     </header>

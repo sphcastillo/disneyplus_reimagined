@@ -20,7 +20,7 @@ const ramabhadra = Ramabhadra({ weight: "400", subsets: ["latin"] });
 function MovieCard({ movie }: { movie: Movie }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const finalRef = useRef(null);
-  console.log("movie: ", movie);
+  // console.log("movie: ", movie);
   return (
     <>
       <div

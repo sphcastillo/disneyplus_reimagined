@@ -37,7 +37,8 @@ function TVCard({ series }: { series: Series }) {
         <Image
           className="w-fit max-w-[210px] h-64 sm:max-w-[230px] sm:h-66 md:max-w-[280px] md:h-67 object-cover object-center shadow-md shadow-gray-900 drop-shadow-xl rounded-sm"
           src={getImagePath(series.backdrop_path || series.poster_path)}
-          alt={series.title}
+          // alt={series.title}
+          alt="series poster"
           width={1920}
           height={1080}
           key={series.id}

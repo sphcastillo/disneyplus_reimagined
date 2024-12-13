@@ -1,5 +1,6 @@
 import CarouselBannerWrapper from '@/components/CarouselBannerWrapper';
 import CastleBanner from '@/components/CastleBanner';
+import DisneyCategories from '@/components/DisneyCategories';
 import MoviesCarousel from '@/components/MoviesCarousel';
 import TVCarousel from '@/components/TVCarousel';
 
@@ -29,6 +30,7 @@ export default async function Home() {
   return (
     <main className="pb-[60px]">
       <CastleBanner  />  
+      <DisneyCategories />
       <CarouselBannerWrapper />
 
       <div className='flex flex-col z-10 space-y-0 mt-0 sm:-mt-20 md:-mt-35'>

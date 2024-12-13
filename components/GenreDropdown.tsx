@@ -1,60 +1,55 @@
-"use client";
-import React, { useState } from "react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { ChevronDown } from "lucide-react";
+import React from "react";
 import Link from "next/link";
 import { Ramabhadra } from "next/font/google";
+import { ChevronDown } from "lucide-react";
+import { Genres } from "@/typings";
 
 const ramabhadra = Ramabhadra({ weight: "400", subsets: ["latin"] });
 
-interface Genre {
-  id: number;
-  name: string;
-}
+async function GenreDropdown() {
+  const url = "https://api.themoviedb.org/3/genre/movie/list?language=en";
 
-interface GenreDropdownProps {
-    genres: Genre[];
-}
+  const options: RequestInit = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${process.env.TMBD_API_KEY}`,
+    },
+    next: {
+      revalidate: 60 * 60 * 24,
+    },
+  };
 
-const GenreDropdown: React.FC<GenreDropdownProps> = ({ genres }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseEnter = () => setIsHovered(true);
-  const handleMouseLeave = () => setIsHovered(false);
+  const response = await fetch(url, options);
+  const data = (await response.json()) as Genres;
 
   return (
-    <div
-      className={`${ramabhadra.className} flex`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <DropdownMenu>
-        <DropdownMenuTrigger className="text-white flex justify-center items-center">
-          <div className="uppercase ml-7 sm:ml-0">Genres</div>
-          <ChevronDown className="ml-1 hidden sm:block" />
-        </DropdownMenuTrigger>
-        {isHovered && (
-          <DropdownMenuContent className="z-[500] bg-gradient-to-b from-[#14143C] to-[#142878] text-white">
-            <DropdownMenuLabel>Select a Genre</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            {genres.map((genre) => (
-              <DropdownMenuItem key={genre.id}>
-                <Link href={`/genre/${genre.id}?genre=${genre.name}`}>
-                  {genre.name}
-                </Link>
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        )}
-      </DropdownMenu>
+    <div className={`${ramabhadra.className} flex`}>
+      <div className="relative group">
+        {/* Dropdown Trigger */}
+        <div className="pt-2 flex items-center cursor-pointer">
+          <span className="text-white uppercase">Genres</span>
+          <ChevronDown className="ml-1 hidden sm:block text-white" />
+        </div>
+
+        {/* Dropdown Content */}
+        <div className="absolute left-0 z-[500] bg-gradient-to-b from-[#14143C] to-[#142878] text-white border-2 border-white mt-2 hidden group-hover:flex flex-col gap-2 py-4 rounded-xl shadow-lg min-w-[160px]">
+          <div className="flex items-center justify-center">
+            <span className="font-bold text-sm">Select a Genre</span>
+          </div>
+          <hr className="my-1 border-white" />
+          {data.genres.map((genre, index) => (
+            <div key={index} className="hover:underline">
+              <Link
+                href={`/genre/${genre.id}?genre=${genre.name}`}
+                className="px-3"
+              >
+                {genre.name}
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

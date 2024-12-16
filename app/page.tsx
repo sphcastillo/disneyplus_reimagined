@@ -28,7 +28,7 @@ export default async function Home() {
   const airingTodayTV = await getAiringTodayTV();
 
   return (
-    <main className="pb-[60px]">
+    <main className="">
       <div className='mx-3 mt-20 lg:mx-10 lg:mt-24 rounded-2xl'>
         <CastleBanner  />  
       </div>

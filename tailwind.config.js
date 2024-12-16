@@ -1,5 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  safelist: [
+    'opacity-0',
+    'opacity-100',
+    'scale-95',
+    'scale-100',
+    'transform',
+    'transition-all',
+    'duration-200',
+  ],
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",

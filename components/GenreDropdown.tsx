@@ -29,7 +29,7 @@ async function GenreDropdown() {
         {/* Dropdown Trigger */}
         <div className="pt-2 flex items-center cursor-pointer">
           <span className="text-white uppercase pl-5 sm:pl-0">Genres</span>
-          <ChevronDown className="ml-1 hidden sm:block" />
+          <ChevronDown className="ml-1 hidden sm:block text-white" />
         </div>
 
         {/* Dropdown Content */}

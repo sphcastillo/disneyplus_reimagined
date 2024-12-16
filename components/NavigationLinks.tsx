@@ -1,5 +1,5 @@
 import { AiFillHome } from "react-icons/ai";
-import { FaPlus } from "react-icons/fa";
+import { FaPlus, FaStar } from "react-icons/fa";
 import { PiFilmReelFill } from "react-icons/pi";
 import { TbDeviceTvOldFilled } from "react-icons/tb";
 import { MdOutlineMoreVert } from "react-icons/md";
@@ -10,7 +10,7 @@ const ramabhadra = Ramabhadra({ weight: "400", subsets: ["latin"] });
 function NavigationLinks() {
   return (
     <div
-      className={`${ramabhadra.className} flex items-center space-x-6 md:space-x-8 uppercase`}
+      className={`${ramabhadra.className} flex items-center space-x-6 uppercase`}
     >
       <div className="flex items-center space-x-2 text-white">
         <AiFillHome />
@@ -27,6 +27,10 @@ function NavigationLinks() {
       <div className="flex items-center space-x-2 text-white">
         <TbDeviceTvOldFilled />
         <span className="hidden lg:flex">Series</span>
+      </div>
+      <div className="flex items-center space-x-2 text-white">
+        <FaStar />
+        <span className="hidden lg:flex">Originals</span>
       </div>
 
       <div className="relative group flex items-center text-white sm:hidden">

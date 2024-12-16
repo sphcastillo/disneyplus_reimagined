@@ -29,7 +29,9 @@ export default async function Home() {
 
   return (
     <main className="pb-[60px]">
-      <CastleBanner  />  
+      <div className='mx-10 mt-24 rounded-2xl'>
+        <CastleBanner  />  
+      </div>
       
       <DisneyCategories />
       <CarouselBannerWrapper />

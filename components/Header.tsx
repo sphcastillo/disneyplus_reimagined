@@ -6,7 +6,7 @@ import GenreDropdown from "./GenreDropdown";
 import { MdOutlineMoreVert } from "react-icons/md";
 import disneyPlusLogo from "@/images/disneyPluslogo.png";
 import NavigationLinks from "./NavigationLinks";
-import { FaPlus } from "react-icons/fa";
+import { FaPlus, FaStar } from "react-icons/fa";
 import { PiFilmReelFill } from "react-icons/pi";
 import { TbDeviceTvOldFilled } from "react-icons/tb";
 import { Ramabhadra } from "next/font/google";
@@ -15,9 +15,9 @@ const ramabhadra = Ramabhadra({ weight: "400", subsets: ["latin"] });
 
 function Header() {
   return (
-    <header className="fixed flex items-center justify-between p-3 top-0 z-50 w-full bg-gradient-to-b from-[#14143C] to-[#141450]">
+    <header className="fixed flex items-center justify-around p-3 top-0 z-50 w-full bg-gradient-to-b from-[#14143C] to-[#141450]">
       <div className="flex items-center space-x-1 md:space-x-7">
-        <Link href="/" className="mr-2 sm:mr-10">
+        <Link href="/" className="mr-2 sm:mr-0">
           <Image
             src={disneyPlusLogo}
             alt="Disney+ logo"
@@ -46,6 +46,10 @@ function Header() {
             <li className="flex items-center space-x-2">
               <TbDeviceTvOldFilled />
               <span className="">Series</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <FaStar />
+              <span className="">Originals</span>
             </li>
           </ul>
         </div>

@@ -16,7 +16,7 @@ function CastleBanner() {
                       src={CastleGIF}
                       unoptimized
                       priority
-                      className="object-center rounded-2xl object-cover  shadow-md  shadow-gray-900 drop-shadow-xl"
+                      className="object-center rounded-2xl object-cover shadow-md shadow-gray-900 drop-shadow-xl animate-zoomOut"
                   />
               </div>
           </div>

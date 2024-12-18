@@ -2,6 +2,7 @@ import disneyplusicon from "@/images/disneyPluslogo.png";
 import Image from "next/image";
 import { FaTiktok } from "react-icons/fa";
 import { Ramabhadra } from "next/font/google";
+import Link from "next/link";
 
 const ramabhadra = Ramabhadra({ weight: "400", subsets: ["latin"] });
 
@@ -165,7 +166,11 @@ const navigation = {
               ))}
             </div>
             <p className="mt-8 text-sm/6 text-white md:order-1 md:mt-0">
-              &copy; 2025 Built By Sophia ~ Disney+ Extreme, Inc. All rights reserved.
+              &copy; 2025 Disney+ Extreme, Inc. All rights reserved.
+            </p>
+            <p className="mt-8 text-sm/6 text-white md:order-1 md:mt-0">
+              Created by {' '} 
+              <Link href='https://www.builtbysophia.com/' className="underline">Built By Sophia</Link>
             </p>
           </div>
         </div>

@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Disney+ Reimagined',
-  description: 'For educational & portfolio purposes only. Please do not come after me, Disney!',
+  description: 'For portfolio purposes only. Please do not come after me, Disney!',
 }
 
 export default function RootLayout({

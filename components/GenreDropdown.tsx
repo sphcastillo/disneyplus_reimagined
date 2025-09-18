@@ -31,7 +31,7 @@ async function GenreDropdown() {
         </div>
 
         {/* Dropdown Content */}
-        <div className="absolute left-0 z-[500] bg-gradient-to-b from-[#14143C] to-[#142878] text-white border-2 border-white mt-2 hidden group-hover:flex flex-col gap-2 py-4 rounded-xl shadow-lg min-w-[160px]">
+        <div className="absolute left-0 z-[500] bg-gradient-to-t from-gray-900 to-[#17171B] text-white border-2 border-white mt-2 hidden group-hover:flex flex-col gap-2 py-4 rounded-xl shadow-lg min-w-[160px]">
           <div className="flex items-center justify-center">
             <span className="font-bold text-sm">Select a Genre</span>
           </div>

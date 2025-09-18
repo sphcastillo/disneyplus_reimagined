@@ -166,7 +166,7 @@ const navigation = {
               ))}
             </div>
             <p className="mt-8 text-sm/6 text-white md:order-1 md:mt-0">
-              &copy; 2025 Disney+ Extreme, Inc. All rights reserved.
+              &copy; 2025 Disney+ Reimagined, Inc. All rights reserved.
             </p>
             <p className="mt-8 text-sm/6 text-white md:order-1 md:mt-0">
               Created by {' '} 

@@ -24,7 +24,7 @@ async function SearchPage({ params: { term } }: SearchProps) {
     const popularMovies = await getPopularMovies();
 
     return (
-        <div className='max-w-7xl mx-auto bg-[#14143C]'>
+        <div className='max-w-7xl mx-auto bg-[#17171B]'>
             <div className={`${ramabhadra.className} py-6 sm:py-12`}>
                 <div className='flex flex-col space-y-4 pt-10'>
                     <div className='pt-[65px] md:pt-[80px]'>

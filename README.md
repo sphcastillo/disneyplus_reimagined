@@ -18,7 +18,7 @@ https://github.com/sphcastillo/disneyplus_reimagined
 
 ## Deployed Site
 
-https://www.builtbysophiadisneyplus.org
+https://disneyplus-reimagined.vercel.app
 
 ## More info
 

@@ -1,10 +1,7 @@
 import MoviesCarousel from "@/components/MoviesCarousel";
 import OpenAIAzureSuggestion from "@/components/OpenAIAzureSuggestion";
 import { getDiscoverMovies } from "@/lib/getMovies";
-import { Ramabhadra } from 'next/font/google';
-
-
-const ramabhadra = Ramabhadra({ weight: "400", subsets: ['latin'] });
+import { ramabhadra } from "@/utils/fonts/fonts";
 
 type Props = {
     params: {

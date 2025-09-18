@@ -1,10 +1,8 @@
 "use client";
 
 import useSWR from "swr";
-import { Hubballi } from 'next/font/google';
+import { hubballi } from "@/utils/fonts/fonts";
 
-
-const hubballi = Hubballi({ weight: "400", subsets: ['latin'] });
 
 const  fetcher = (term: string) =>
  fetch("/api/suggestions?term=" + term).then((res) => res.json());

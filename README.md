@@ -1,4 +1,4 @@
-# DISNEY+ Clone
+# Disney+ Reimagined
 
 ## Description
 
@@ -14,7 +14,7 @@ NextJS 14, Microsoft Azure functions, Azure OpenAI, Caching, zod, TMDB database,
 
 ## Github Repository
 
-https://github.com/sphcastillo/disneyplusextreme_
+https://github.com/sphcastillo/disneyplus_reimagined
 
 ## Deployed Site
 

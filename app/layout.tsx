@@ -6,8 +6,8 @@ import Footer from '@/components/Footer';
 
 
 export const metadata: Metadata = {
-  title: 'Disney+ Clone',
-  description: 'For educational purposes only. Please do not come after me, Disney!',
+  title: 'Disney+ Reimagined',
+  description: 'For educational & portfolio purposes only. Please do not come after me, Disney!',
 }
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='bg-[#14143C]'>
+      <body className='bg-[#17171B]'>
         <Providers>
           <Header />
           {children}

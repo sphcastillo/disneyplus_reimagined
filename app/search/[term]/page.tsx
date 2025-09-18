@@ -2,18 +2,15 @@ import MoviesCarousel from '@/components/MoviesCarousel';
 import AISuggestion from '@/components/AISuggestion';
 import { getPopularMovies, getSearchedMovies } from '@/lib/getMovies';
 import { notFound } from 'next/navigation';
-import { Ramabhadra } from 'next/font/google';
+import { ramabhadra } from '@/utils/fonts/fonts';
 
-
-const ramabhadra = Ramabhadra({ weight: "400", subsets: ['latin'] });
-
-type Props = {
+type SearchProps = {
     params: {
         term: string;
     }
 };
 
-async function SearchPage({ params: { term } }: Props) {
+async function SearchPage({ params: { term } }: SearchProps) {
     // If no term is provided, return a 404
     if (!term) notFound();
 
@@ -28,7 +25,7 @@ async function SearchPage({ params: { term } }: Props) {
 
     return (
         <div className='max-w-7xl mx-auto bg-[#14143C]'>
-            <div className={ramabhadra.className}>
+            <div className={`${ramabhadra.className} py-6 sm:py-12`}>
                 <div className='flex flex-col space-y-4 pt-10'>
                     <div className='pt-[65px] md:pt-[80px]'>
                         <h1 className='text-3xl sm:text-5xl px-10 text-white'>Results for {termToUse}</h1>

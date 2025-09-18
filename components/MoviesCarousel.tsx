@@ -1,9 +1,7 @@
 import { Movie } from '@/typings';
 import MovieCard from './MovieCard';
 import { cn } from '@/lib/utils';
-import { Quattrocento_Sans } from 'next/font/google';
-
-const quattrocentoSans = Quattrocento_Sans({ weight: "400", subsets: ['latin'] })
+import { quattrocentoSans } from '@/utils/fonts/fonts';
 
 // props for the MoviesCarousel component
 type Props = {

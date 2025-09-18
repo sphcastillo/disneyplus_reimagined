@@ -2,10 +2,9 @@
 import getImagePath from "@/lib/getImagePath";
 import { Movie } from "@/typings";
 import Image from "next/image";
-import { Ramabhadra } from "next/font/google";
+import { ramabhadra } from "@/utils/fonts/fonts";
 import { useRef } from "react";
 import { useDisclosure } from "@chakra-ui/react";
-
 import { Modal, ModalOverlay, ModalContent } from "@chakra-ui/react";
 import { Card, CardBody, CardFooter } from "@chakra-ui/react";
 import { Stack } from "@chakra-ui/react";
@@ -15,7 +14,6 @@ import { CloseButton } from "@chakra-ui/react";
 import { Button, ButtonGroup } from "@chakra-ui/react";
 import { Flex } from "@chakra-ui/react";
 
-const ramabhadra = Ramabhadra({ weight: "400", subsets: ["latin"] });
 
 function MovieCard({ movie }: { movie: Movie }) {
   const { isOpen, onOpen, onClose } = useDisclosure();

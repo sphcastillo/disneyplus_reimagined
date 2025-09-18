@@ -93,7 +93,7 @@ const navigation = {
   
   export default function Footer() {
     return (
-      <footer className={`${ramabhadra.className} bg-[#14143C]`}>
+      <footer className={`${ramabhadra.className} bg-[#17171B]`}>
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
           <div className="border-t border-white pt-12 xl:grid xl:grid-cols-3 xl:gap-8">
             <Image

@@ -1,10 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import { Ramabhadra } from "next/font/google";
+import { ramabhadra } from "@/utils/fonts/fonts";
 import { ChevronDown } from "lucide-react";
 import { Genres } from "@/typings";
-
-const ramabhadra = Ramabhadra({ weight: "400", subsets: ["latin"] });
 
 async function GenreDropdown() {
   const url = "https://api.themoviedb.org/3/genre/movie/list?language=en";

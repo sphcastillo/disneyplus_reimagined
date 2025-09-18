@@ -1,6 +1,7 @@
 import CarouselBannerWrapper from '@/components/CarouselBannerWrapper';
 import CastleBanner from '@/components/CastleBanner';
 import DisneyCategories from '@/components/DisneyCategories';
+import HeroCarousel from '@/components/HeroCarousel';
 import MoviesCarousel from '@/components/MoviesCarousel';
 import TVCarousel from '@/components/TVCarousel';
 
@@ -28,9 +29,10 @@ export default async function Home() {
   const airingTodayTV = await getAiringTodayTV();
 
   return (
-    <main className="">
-      <div className='mx-3 mt-20 lg:mx-10 lg:mt-24 rounded-2xl'>
-        <CastleBanner  />  
+    <main>
+      <div className='mt-20 lg:mt-28'>
+        {/* <CastleBanner  />   */}
+        <HeroCarousel />
       </div>
       
       <DisneyCategories />

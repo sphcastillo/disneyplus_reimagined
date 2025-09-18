@@ -15,7 +15,7 @@ const ramabhadra = Ramabhadra({ weight: "400", subsets: ["latin"] });
 
 function Header() {
   return (
-    <header className="fixed flex items-center justify-around p-3 top-0 z-50 w-full bg-gradient-to-b from-[#14143C] to-[#141450]">
+    <header className="fixed flex items-center justify-around p-3 top-0 z-50 w-full bg-gradient-to-b from-[#17171B] to-[#000]">
       <div className="flex items-center space-x-1 md:space-x-7">
         <Link href="/" className="mr-2 sm:mr-0">
           <Image

@@ -12,6 +12,7 @@ function HeroCarousel() {
   return (
     <div className="relative pt-6">
       <Carousel
+        className="group" 
         opts={{ align: "center", loop: true, containScroll: "trimSnaps" }}
       >
         <CarouselContent
@@ -22,27 +23,45 @@ function HeroCarousel() {
             [&>*]:basis-[92%]
             sm:[&>*]:basis-[94%]
             md:[&>*]:basis-[96%]
-            lg:[&>*]:basis-[87%]  
+            lg:[&>*]:basis-[92%]
           "
         >
           {HeroCarouselData.map((movie) => (
             <CarouselItem key={movie.id}>
-              <div className="h-[200px] sm:h-[325px] md:h-[350px] lg:h-[470px] w-full overflow-hidden rounded-xl">
+              <div className="h-[200px] sm:h-[325px] md:h-[350px] lg:h-[400px] w-full overflow-hidden rounded-xl">
                 <Image
                   src={movie.image}
                   alt={movie.title}
                   width={1920}
                   height={810}
                   priority
-                  className="h-full w-full object-cover object-right sm:object-right md:object-right lg:object-center"
+                  className="h-full w-full object-cover object-right sm:object-right md:object-right lg:object-right"
                 />
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
 
-        <CarouselPrevious className="hidden left-6 top-1/2 -translate-y-1/2 h-10 w-10" />
-        <CarouselNext className="hidden right-6 top-1/2 -translate-y-1/2 h-10 w-10" />
+        <CarouselPrevious
+          className="
+            hidden sm:block left-6 top-1/2 -translate-y-1/2
+            text-white
+            opacity-0 pointer-events-none
+            transition-opacity duration-200
+            group-hover:opacity-100 group-hover:pointer-events-auto
+            focus-visible:opacity-100 focus-visible:pointer-events-auto
+          "
+        />
+        <CarouselNext
+          className="
+            hidden sm:block right-6 top-1/2 -translate-y-1/2
+            text-white
+            opacity-0 pointer-events-none
+            transition-opacity duration-200
+            group-hover:opacity-100 group-hover:pointer-events-auto
+            focus-visible:opacity-100 focus-visible:pointer-events-auto
+          "
+        />
       </Carousel>
     </div>
   );

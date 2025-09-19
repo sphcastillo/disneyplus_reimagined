@@ -11,8 +11,8 @@ import theSimpsons from "@/images/hero/TheSimpsons.png";
 export const HeroCarouselData = [
     {
         id: 1,
-        title: "Dancing with the Stars",
-        image: dancingwiththestars
+        title: "Taylor Swift: The Eras Tour",
+        image: taylorSwiftERAS
     },
     {
         id: 2,
@@ -43,11 +43,11 @@ export const HeroCarouselData = [
         id: 7,
         title: "Star Wars: Andor",
         image: starwarsAndor
-    },
+    },    
     {
         id: 8,
-        title: "Taylor Swift: The Eras Tour",
-        image: taylorSwiftERAS
+        title: "Dancing with the Stars",
+        image: dancingwiththestars
     },
     {
         id: 9,

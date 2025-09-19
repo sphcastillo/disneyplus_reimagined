@@ -3,34 +3,32 @@ import { FaPlus, FaStar } from "react-icons/fa";
 import { PiFilmReelFill } from "react-icons/pi";
 import { TbDeviceTvOldFilled } from "react-icons/tb";
 import { MdOutlineMoreVert } from "react-icons/md";
-import { Ramabhadra } from "next/font/google";
-
-const ramabhadra = Ramabhadra({ weight: "400", subsets: ["latin"] });
+import { ramabhadra } from "@/utils/fonts/fonts";
 
 function NavigationLinks() {
   return (
     <div
-      className={`${ramabhadra.className} flex items-center space-x-6 uppercase`}
+      className={`${ramabhadra.className} flex items-center space-x-10 lg:space-x-6 uppercase`}
     >
       <div className="flex items-center space-x-2 text-white">
         <AiFillHome />
-        <span className="hidden lg:flex">Home</span>
+        <span className="hidden lg:flex text-sm">Home</span>
       </div>
       <div className="flex items-center space-x-2 text-white">
         <FaPlus />
-        <span className="hidden lg:flex">Watchlist</span>
+        <span className="hidden lg:flex text-sm">Watchlist</span>
       </div>
       <div className="flex items-center space-x-2 text-white">
         <PiFilmReelFill />
-        <span className="hidden lg:flex">Movies</span>
+        <span className="hidden lg:flex text-sm">Movies</span>
       </div>
       <div className="flex items-center space-x-2 text-white">
         <TbDeviceTvOldFilled />
-        <span className="hidden lg:flex">Series</span>
+        <span className="hidden lg:flex text-sm">Series</span>
       </div>
       <div className="flex items-center space-x-2 text-white">
         <FaStar />
-        <span className="hidden lg:flex">Originals</span>
+        <span className="hidden lg:flex text-sm">Originals</span>
       </div>
 
       <div className="relative group flex items-center text-white sm:hidden">

@@ -1,6 +1,13 @@
 @tailwind base;
+@theme {
+  --breakpoint-xs: 540px;   /* enables xs: */
+  --breakpoint-6xl: 1152px; /* enables 6xl: */
+  --breakpoint-7xl: 1280px; /* enables 7xl: */
+}
 @tailwind components;
 @tailwind utilities;
+
+
  
 @layer base {
   :root {

@@ -9,9 +9,7 @@ import NavigationLinks from "./NavigationLinks";
 import { FaPlus, FaStar } from "react-icons/fa";
 import { PiFilmReelFill } from "react-icons/pi";
 import { TbDeviceTvOldFilled } from "react-icons/tb";
-import { Ramabhadra } from "next/font/google";
-
-const ramabhadra = Ramabhadra({ weight: "400", subsets: ["latin"] });
+import { ramabhadra } from "@/utils/fonts/fonts";
 
 function Header() {
   return (
@@ -25,7 +23,7 @@ function Header() {
             className="cursor-pointer"
           />
         </Link>
-        <div className="hidden sm:block">
+        <div className="hidden md:block">
           <NavigationLinks />
         </div>
         <div className="relative group flex items-center text-white sm:hidden">

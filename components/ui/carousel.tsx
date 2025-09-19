@@ -7,7 +7,6 @@ import useEmblaCarousel, {
 import { ChevronRight, ChevronLeft } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
@@ -67,6 +66,7 @@ const Carousel = React.forwardRef<
     )
     const [canScrollPrev, setCanScrollPrev] = React.useState(false)
     const [canScrollNext, setCanScrollNext] = React.useState(false)
+    const timerRef = React.useRef<number | null>(null)
 
     const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) return;
@@ -96,14 +96,53 @@ const Carousel = React.forwardRef<
       [scrollPrev, scrollNext]
     )
 
+
     React.useEffect(() => {
-      if (!api) return;
-      const autoplay = setInterval(() => {
-        api.scrollNext()
-      }, 8000)
-
-      return () => clearInterval(autoplay)
-
+      if (!api) return
+    
+      const node = api.rootNode()
+    
+      const clear = () => {
+        if (timerRef.current !== null) {
+          clearInterval(timerRef.current)
+          timerRef.current = null
+        }
+      }
+    
+      const start = () => {
+        clear()
+        // advance every 8s
+        timerRef.current = window.setInterval(() => {
+          api.scrollNext()
+        }, 8000)
+      }
+    
+      // start immediately
+      start()
+    
+      // pause on hover / focus / drag
+      const pause = () => clear()
+      const resume = () => start()
+    
+      node.addEventListener("mouseenter", pause)
+      node.addEventListener("mouseleave", resume)
+      node.addEventListener("focusin", pause)
+      node.addEventListener("focusout", resume)
+    
+      // also pause while the user is dragging the carousel
+      api.on("pointerDown", pause)
+      api.on("pointerUp", resume)
+    
+      // cleanup
+      return () => {
+        clear()
+        node.removeEventListener("mouseenter", pause)
+        node.removeEventListener("mouseleave", resume)
+        node.removeEventListener("focusin", pause)
+        node.removeEventListener("focusout", resume)
+        api.off("pointerDown", pause)
+        api.off("pointerUp", resume)
+      }
     }, [api])
 
     React.useEffect(() => {
@@ -199,58 +238,58 @@ CarouselItem.displayName = "CarouselItem"
 
 const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
-  React.ComponentProps<typeof Button>
->(({ className, variant = "outline", size = "icon", ...props }, ref) => {
+  React.ButtonHTMLAttributes<HTMLButtonElement>
+>(({ className, ...props }, ref) => {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel()
 
   return (
-    <Button
+    <button
       ref={ref}
-      variant={variant}
-      size={size}
       className={cn(
-        "absolute  h-8 w-8 rounded-full",
-        orientation === "horizontal"
-          ? "-left-12 top-1/2 -translate-y-1/2"
-          : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
+        "absolute top-1/2 -translate-y-1/2 z-10 text-gray-300",
+        "opacity-0 pointer-events-none transition-opacity duration-200",
+        "group-hover:opacity-100 group-hover:pointer-events-auto",
+        "focus-visible:opacity-100 focus-visible:pointer-events-auto",
+    
+        "left-2 sm:left-3 md:left-4 lg:left-6",
         className
       )}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}
     >
-      <ChevronLeft className="h-4 w-4" />
+      <ChevronLeft className="h-8 w-8 lg:h-10 lg:w-10" />
       <span className="sr-only">Previous slide</span>
-    </Button>
+    </button>
   )
 })
 CarouselPrevious.displayName = "CarouselPrevious"
 
 const CarouselNext = React.forwardRef<
   HTMLButtonElement,
-  React.ComponentProps<typeof Button>
->(({ className, variant = "outline", size = "icon", ...props }, ref) => {
+  React.ButtonHTMLAttributes<HTMLButtonElement>
+>(({ className, ...props }, ref) => {
   const { orientation, scrollNext, canScrollNext } = useCarousel()
 
   return (
-    <Button
+    <button
       ref={ref}
-      variant={variant}
-      size={size}
       className={cn(
-        "absolute h-8 w-8 rounded-full",
-        orientation === "horizontal"
-          ? "-right-12 top-1/2 -translate-y-1/2"
-          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
+        "absolute top-1/2 -translate-y-1/2 z-10 text-gray-300",
+        "opacity-0 pointer-events-none transition-opacity duration-200",
+        "group-hover:opacity-100 group-hover:pointer-events-auto",
+        "focus-visible:opacity-100 focus-visible:pointer-events-auto",
+    
+        "right-2 sm:right-3 md:right-4 lg:right-6",
         className
       )}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}
     >
-      <ChevronRight className="h-4 w-4" />
+      <ChevronRight className="h-8 w-8 lg:h-10 lg:w-10" />
       <span className="sr-only">Next slide</span>
-    </Button>
+    </button>
   )
 })
 CarouselNext.displayName = "CarouselNext"

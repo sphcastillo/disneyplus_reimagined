@@ -38,7 +38,6 @@ function HeroCarousel() {
           ))}
         </CarouselContent>
 
-        {/* arrows stay in the peek area */}
         <CarouselPrevious className="left-6 top-1/2 -translate-y-1/2 h-10 w-10" />
         <CarouselNext className="right-6 top-1/2 -translate-y-1/2 h-10 w-10" />
       </Carousel>

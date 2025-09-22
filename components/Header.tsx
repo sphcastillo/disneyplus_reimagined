@@ -10,6 +10,8 @@ import { FaPlus, FaStar } from "react-icons/fa";
 import { PiFilmReelFill } from "react-icons/pi";
 import { TbDeviceTvOldFilled } from "react-icons/tb";
 import { ramabhadra } from "@/utils/fonts/fonts";
+import SearchHintBubble from "./SearchHintBubble";
+import GenreHintBubble from "./GenreHintBubble";
 
 function Header() {
   return (
@@ -53,6 +55,10 @@ function Header() {
         </div>
         </div>
       </div>
+      <div className="relative">
+        <GenreHintBubble />
+      </div>
+      <SearchHintBubble />
       <div className="flex space-x-4 md:space-x-7">
         <GenreDropdown />
         <SearchInput />

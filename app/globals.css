@@ -1,5 +1,7 @@
 @tailwind base;
 @theme {
+  --breakpoint-mobile: 390px;   /* enables mobile: */
+  --breakpoint-xxs: 414px;   /* enables xxs: */
   --breakpoint-xs: 540px;   /* enables xs: */
   --breakpoint-md850: 850px; /* enables md850: */
   --breakpoint-6xl: 1152px; /* enables 6xl: */
@@ -8,8 +10,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes subtleBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
 
- 
+.bounce-hint-delay-0 {
+  animation: subtleBounce 0.6s ease-in-out infinite;
+}
+
+.bounce-hint-delay-1 {
+  animation: subtleBounce 0.6s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

@@ -1,6 +1,7 @@
 @tailwind base;
 @theme {
   --breakpoint-xs: 540px;   /* enables xs: */
+  --breakpoint-md850: 850px; /* enables md850: */
   --breakpoint-6xl: 1152px; /* enables 6xl: */
   --breakpoint-7xl: 1280px; /* enables 7xl: */
 }

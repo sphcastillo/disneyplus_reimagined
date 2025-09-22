@@ -13,7 +13,7 @@ import { ramabhadra } from "@/utils/fonts/fonts";
 
 function Header() {
   return (
-    <header className="fixed flex items-center justify-around p-3 top-0 z-50 w-full bg-gradient-to-b from-[#17171B] to-[#000]">
+    <header className="fixed flex items-center justify-between p-3 top-0 z-50 w-full bg-gradient-to-b from-[#17171B] to-[#000]">
       <div className="flex items-center space-x-1 md:space-x-7">
         <Link href="/" className="mr-2 sm:mr-0">
           <Image
@@ -31,7 +31,7 @@ function Header() {
             <MdOutlineMoreVert />
           </div>
 
-          <div className="absolute -left-4 mt-44 w-32 bg-gradient-to-b from-[#14143C] to-[#142878] text-white border-2 border-white rounded-xl shadow-lg opacity-0 scale-95 transform transition-all duration-200 group-hover:opacity-100 group-hover:scale-100">
+          <div className="absolute -left-4 mt-44 w-32 bg-gradient-to-b from-[#17171B] to-[#000] text-white border-2 border-white rounded-xl shadow-lg opacity-0 scale-95 transform transition-all duration-200 group-hover:opacity-100 group-hover:scale-100">
           <ul className={`${ramabhadra.className} flex flex-col space-y-2 p-2`}>
             <li className="flex items-center space-x-2">
               <FaPlus />

@@ -6,11 +6,22 @@ Step into a world of enchantment with our Disney-inspired platform, where the ma
 
 ## Requirements
 
-Microsoft Azure Account, TMDB Account, Vercel Account
+Microsoft Azure Account, 
+TMDB Account, 
+Vercel Account
 
 ## Technologies & Methods Used
 
-NextJS 14, Microsoft Azure functions, Azure OpenAI, Caching, zod, TMDB database, TailwindCSS, Chakra UI, Typescript, Vercel
+NextJS 14, 
+Microsoft Azure functions, 
+Azure OpenAI, 
+Caching, 
+zod, 
+TMDB database, 
+TailwindCSS, 
+Chakra UI, 
+Typescript, 
+Vercel
 
 ## Github Repository
 
@@ -23,8 +34,12 @@ https://disneyplus-reimagined.vercel.app
 ## More info
 
 Author: Sophia Castillo,
+
+
 Email: sophia@builtbysophia.com,
 
 Professional website: https://www.builtbysophia.com,
+
 GitHub: https://github.com/sphcastillo,
+
 LinkedIn: www.linkedin.com/in/sophiacastillo-ca

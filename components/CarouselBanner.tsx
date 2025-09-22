@@ -38,7 +38,7 @@ function CarouselBanner({ movies }: Props) {
                 height={810}
                 priority
                 src={getImagePath(movie.backdrop_path, true)}
-                className="h-[245px] sm:h-[320px] rounded-2xl object-cover object-center shadow-md shadow-gray-900 drop-shadow-xl"
+                className="h-[245px] sm:h-[320px] rounded-2xl object-cover object-center shadow-md shadow-black-900 drop-shadow-xl"
               />
 
               <div className="absolute mt-0 top-0 pt-40 sm:pt-48 xl:pt-52 left-0 bg-transparent z-20 h-full w-full bg-gradient-to-r from-gray-900/30 via-transparent to-transparent p-5 space-y-5 text-white">
@@ -48,7 +48,7 @@ function CarouselBanner({ movies }: Props) {
             </div>
           ))}
         </div>
-        {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-200/0 via-gray-900/25 to-[#1A1C29]" /> */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-200/0 via-gray-900/5 to-[#17171B]" />
         
       </div>
     )

@@ -31,12 +31,12 @@ function MoviesCarousel({ title, movies, isVertical }: Props) {
               >
                 <MovieCard movie={movie} />
                 <div className="max-w-2xl">
-                  <div className={quattrocentoSans.className}>
+                  <div className={`${quattrocentoSans.className}`}>
                     <p className='font-bold text-white text-[20px]'>
                       {movie.title} ({movie.release_date?.split("-")[0]})
                     </p>
                   </div>
-                  <div className={quattrocentoSans.className}>
+                  <div className={`${quattrocentoSans.className}`}>
                     <p className='text-white mt-3'>{movie.overview}</p>
                   </div>
                 </div>

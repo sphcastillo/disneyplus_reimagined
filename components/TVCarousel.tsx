@@ -15,7 +15,7 @@ type Props = {
 function TVCarousel({ title, tv, isVertical }: Props) {
   return (
     <div className='z-20'>
-        <div className={quattrocentoSans.className}>
+        <div className={`${quattrocentoSans.className}`}>
           <h2 className="text-[20px] font-bold px-10 py-2 text-white">{title}</h2>
         </div>
         <div className={cn(
@@ -33,12 +33,12 @@ function TVCarousel({ title, tv, isVertical }: Props) {
               >
                 <TVCard series={series} />
                 <div className="max-w-2xl">
-                  <div className={quattrocentoSans.className}>
+                  <div className={`${quattrocentoSans.className}`}>
                     <p className='font-bold text-white text-[20px]'>
                       {series.title} ({series.release_date?.split("-")[0]})
                     </p>
                   </div>
-                  <div className={quattrocentoSans.className}>
+                  <div className={`${quattrocentoSans.className}`}>
                     <p className='text-white mt-3'>{series.overview}</p>
                   </div>
                 </div>

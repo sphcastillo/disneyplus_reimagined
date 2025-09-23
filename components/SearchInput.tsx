@@ -5,16 +5,14 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Ramabhadra } from 'next/font/google';
-
-const ramabhadra = Ramabhadra({ weight: "400", subsets: ['latin'] });
-
+import { ramabhadra } from "@/utils/fonts/fonts";
+import { Button } from "@/components/ui/button";
 
 const formSchema = z.object({
-  input: z.string().min(2).max(50),
-})
+  input: z.string().trim().min(2, "Type at least 2 characters").max(50),
+});
 
-function SearchInput() {
+export default function SearchInput() {
   const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -25,33 +23,37 @@ function SearchInput() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
- 
-      // redirect to the page
-      router.push(`/search/${values.input}`);
-      form.reset();
+    const term = values.input.trim();
+    if (!term) return;
+    router.push(`/search/${encodeURIComponent(term)}`); 
+    form.reset();
   }
-
 
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="flex gap-2 items-center">
         <FormField
           control={form.control}
           name="input"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="flex-1">
               <FormControl>
-                <div className={ramabhadra.className}>
-                  <Input placeholder="Search..." {...field} />
+                <div className={`${ramabhadra.className}`}>
+                <Input
+                    placeholder="Search..."
+                    {...field}
+                    inputMode="search"
+                    autoComplete="off"
+                    spellCheck={false}
+                  />
                 </div>
               </FormControl>
             </FormItem>
           )}
         />
+        <Button type="submit">Search</Button>
       </form>
     </Form>
   )
 }
-
-export default SearchInput;

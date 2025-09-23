@@ -4,21 +4,20 @@ import { getDiscoverMovies } from "@/lib/getMovies";
 import { ramabhadra } from "@/utils/fonts/fonts";
 
 type Props = {
-    params: {
-        id: string;
-    };
-    searchParams: {
-        genre: string;
-    };
-}
+    params: Promise<{ id: string }>;
+    searchParams: Promise<{ genre?: string }>;
+  };
+  
 
-async function GenrePage({ params: { id }, searchParams: { genre }}: Props) {
+async function GenrePage({ params, searchParams }: Props) {
+    const { id } = await params;
+    const { genre = "" } = await searchParams;
     
     const movies = await getDiscoverMovies(id);
 
     return (
         <div className='max-w-7xl mx-auto bg-[#17171B]'>
-            <div className={ramabhadra.className}>
+            <div className={`${ramabhadra.className}`}>
                 <div className="pt-[85px]">
                     <OpenAIAzureSuggestion term={genre}/>
                 </div>

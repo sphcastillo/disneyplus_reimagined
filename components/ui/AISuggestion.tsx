@@ -1,10 +1,7 @@
 "use client";
 
 import useSWR from "swr";
-import { Hubballi } from 'next/font/google';
-
-
-const hubballi = Hubballi({ weight: "400", subsets: ['latin'] });
+import { hubballi } from "@/utils/fonts/fonts";
 
 const  fetcher = (term: string) =>
  fetch("/api/suggestions?term=" + term).then((res) => res.json());
@@ -39,7 +36,7 @@ function AISuggestion({ term }: { term: string }) {
                 <p className="text-sm text-gray-400">
                     AI (Azure Functions) Assistant Suggests:{' '}
                 </p>
-                <div className={hubballi.className}>
+                <div className={`${hubballi.className}`}>
                     <p className="italic text-xl text-white">&quot;{data.message}&quot;</p>
                 </div>
             </div>

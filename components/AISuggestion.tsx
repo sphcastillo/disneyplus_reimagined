@@ -37,7 +37,7 @@ function AISuggestion({ term }: { term: string }) {
                 <p className="text-sm text-yellow-300">
                     AI (Azure Functions) Assistant Suggests:{' '}
                 </p>
-                <div className={hubballi.className}>
+                <div className={`${hubballi.className}`}>
                     <p className="italic text-xl text-white">&quot;{data.message}&quot;</p>
                 </div>
             </div>

@@ -7,7 +7,7 @@ import { ramabhadra } from '@/utils/fonts/fonts';
 type SearchProps = {
     params: Promise<{ term: string }>;
   };
-  
+
 async function SearchPage({ params }: SearchProps) {
     const { term } = await params; 
     // If no term is provided, return a 404
@@ -26,9 +26,9 @@ async function SearchPage({ params }: SearchProps) {
     return (
         <div className='max-w-7xl mx-auto bg-[#17171B]'>
             <div className={`${ramabhadra.className} py-6 sm:py-12`}>
-                <div className='flex flex-col space-y-4 pt-10'>
-                    <div className='pt-[65px] md:pt-[80px]'>
-                        <h1 className='text-3xl sm:text-5xl px-10 text-white'>Results for {termToUse}</h1>
+                <div className='flex flex-col space-y-4 pt-16 md:pt-20'>
+                    <div className='pt-[65px]'>
+                        <h1 className='text-2xl sm:text-4xl px-10 text-white'>Results for {termToUse}</h1>
                     </div>
                     <AISuggestion term={termToUse} />
                     <MoviesCarousel title="Movies" movies={movies} isVertical/>

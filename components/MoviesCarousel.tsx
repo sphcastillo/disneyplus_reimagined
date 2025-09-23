@@ -13,8 +13,8 @@ type Props = {
 function MoviesCarousel({ title, movies, isVertical }: Props) {
   return (
     <div className='z-20'>
-        <div className={quattrocentoSans.className}>
-          <h2 className="text-[20px] font-bold px-10 py-2 text-white">{title}</h2>
+        <div className={`${quattrocentoSans.className} flex items-center justify-center`}>
+          <h2 className="text-[24px] font-bold px-10 py-2 text-white">{title}</h2>
         </div>
         <div className={cn(
           "flex space-x-4 overflow-scroll px-5 lg:px-10 py-5 scrollbar-hide", 
@@ -37,7 +37,7 @@ function MoviesCarousel({ title, movies, isVertical }: Props) {
                     </p>
                   </div>
                   <div className={`${quattrocentoSans.className}`}>
-                    <p className='text-white mt-3'>{movie.overview}</p>
+                    <p className='text-white mt-3 text-[14px] sm:text-[15px]'>{movie.overview}</p>
                   </div>
                 </div>
               </div>

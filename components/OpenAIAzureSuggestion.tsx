@@ -42,7 +42,7 @@ export default async function OpenAIAzureSuggestion({ term }: Props) {
       <div>
         <p className="text-sm text-purple-400">Azure OpenAI Assistant Suggests: </p>
         <div className={`${hubballi.className}`}>
-          <p className="italic text-[21px] text-white">{content}</p>
+          <p className="italic text-md sm:text-lg lg:text-xl text-white">{content}</p>
         </div>
       </div>
     </div>

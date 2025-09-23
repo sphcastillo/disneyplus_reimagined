@@ -1,5 +1,4 @@
 "use client";
-
 import useSWR from "swr";
 import { hubballi } from "@/utils/fonts/fonts";
 

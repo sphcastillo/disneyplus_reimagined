@@ -1,5 +1,4 @@
 import CarouselBannerWrapper from '@/components/CarouselBannerWrapper';
-import CastleBanner from '@/components/CastleBanner';
 import DisneyCategories from '@/components/DisneyCategories';
 import HeroCarousel from '@/components/HeroCarousel';
 import MoviesCarousel from '@/components/MoviesCarousel';
@@ -8,8 +7,7 @@ import TVCarousel from '@/components/TVCarousel';
 import { 
   getPopularMovies, 
   getTopRatedMovies, 
-  getUpcomingMovies, 
-  getNowPlayingMovies, 
+  getUpcomingMovies,  
 } from '@/lib/getMovies';
 import {  
   getDiscoverTV, 
@@ -22,7 +20,6 @@ export default async function Home() {
   const upcomingMovies = await getUpcomingMovies();
   const topRatedMovies = await getTopRatedMovies();
   const popularMovies = await getPopularMovies();
-  // const nowPlayingMovies = await getNowPlayingMovies();
 
   const topRatedTV = await getTopRatedTV();
   const discoverTV = await getDiscoverTV();
@@ -31,7 +28,6 @@ export default async function Home() {
   return (
     <main>
       <div className='mt-20 lg:mt-28'>
-        {/* <CastleBanner  />   */}
         <HeroCarousel />
       </div>
       

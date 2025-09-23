@@ -5,17 +5,17 @@ import { notFound } from 'next/navigation';
 import { ramabhadra } from '@/utils/fonts/fonts';
 
 type SearchProps = {
-    params: {
-        term: string;
-    }
-};
-
-async function SearchPage({ params: { term } }: SearchProps) {
+    params: Promise<{ term: string }>;
+  };
+  
+async function SearchPage({ params }: SearchProps) {
+    const { term } = await params; 
     // If no term is provided, return a 404
     if (!term) notFound();
 
     // Decode the term to use in the API call
-    const termToUse = decodeURI(term); 
+    const termToUse = decodeURIComponent(term); 
+    console.log("termToUse: ", termToUse);
 
     // API call to get the searched movies
     const movies = await getSearchedMovies(termToUse);

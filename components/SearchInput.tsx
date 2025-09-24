@@ -46,6 +46,7 @@ export default function SearchInput() {
                     inputMode="search"
                     autoComplete="off"
                     spellCheck={false}
+                    className='text-base'
                   />
                 </div>
               </FormControl>

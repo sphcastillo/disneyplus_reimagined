@@ -28,9 +28,10 @@ async function SearchPage({ params }: SearchProps) {
             <div className={`${ramabhadra.className} py-6 sm:py-12`}>
                 <div className='flex flex-col space-y-4 pt-16 md:pt-20'>
                     <div className='pt-[65px]'>
-                        <h1 className='text-2xl sm:text-4xl px-10 text-white'>Results for {termToUse}</h1>
+                        <h1 className='text-2xl sm:text-4xl px-6 sm:px-10 text-white'>Results for {termToUse}</h1>
                     </div>
                     <AISuggestion term={termToUse} />
+                    <div className='h-[1px] bg-white/10'/>
                     <MoviesCarousel title="Movies" movies={movies} isVertical/>
                     <MoviesCarousel title="You may also like..." movies={popularMovies} />
                 </div>

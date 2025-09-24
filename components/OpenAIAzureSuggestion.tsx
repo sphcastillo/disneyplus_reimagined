@@ -4,8 +4,8 @@ import { hubballi } from "@/utils/fonts/fonts";
 type Props = { term: string };
 
 export default async function OpenAIAzureSuggestion({ term }: Props) {
-  const endpoint   = process.env.ENDPOINT!;
-  const apiKey     = process.env.AZURE_API_KEY!;
+  const endpoint   = process.env.AZURE_OPENAI_ENDPOINT!;
+  const apiKey     = process.env.AZURE_OPENAI_API_KEY!;
   const apiVersion = process.env.AZURE_OPENAI_API_VERSION ?? "2025-01-01-preview";
   const deployment = process.env.AZURE_OPENAI_DEPLOYMENT ?? "DisneyPlusAzureOpenAI";
 
@@ -41,7 +41,7 @@ export default async function OpenAIAzureSuggestion({ term }: Props) {
       <div className="animate-pulse rounded-full bg-gradient-to-t from-purple-400 h-10 w-10 border-2 flex-shrink-0 border-white" />
       <div>
         <p className="text-sm text-purple-400">Azure OpenAI Assistant Suggests: </p>
-        <div className={`${hubballi.className}`}>
+        <div className={`${hubballi.className} pt-2 sm:pt-4`}>
           <p className="italic text-md sm:text-lg lg:text-xl text-white">{content}</p>
         </div>
       </div>

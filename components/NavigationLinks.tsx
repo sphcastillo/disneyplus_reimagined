@@ -4,6 +4,7 @@ import { PiFilmReelFill } from "react-icons/pi";
 import { TbDeviceTvOldFilled } from "react-icons/tb";
 import { MdOutlineMoreVert } from "react-icons/md";
 import { ramabhadra } from "@/utils/fonts/fonts";
+import Link from "next/link";
 
 function NavigationLinks() {
   return (
@@ -11,12 +12,14 @@ function NavigationLinks() {
       className={`${ramabhadra.className} flex items-center space-x-10 lg:space-x-6 uppercase`}
     >
       <div className="flex items-center space-x-2 text-white">
-        <AiFillHome />
-        <span className="hidden lg:flex text-sm">Home</span>
+        <Link href="/" className="flex items-center space-x-2">
+          <AiFillHome />
+          <span className="hidden lg:flex text-sm">Home</span>
+        </Link>
       </div>
       <div className="flex items-center space-x-2 text-white">
         <FaPlus />
-        <span className="hidden lg:flex text-sm">Watchlist</span>
+        <span className="hidden 6xl:flex text-sm">Watchlist</span>
       </div>
       <div className="flex items-center space-x-2 text-white">
         <PiFilmReelFill />

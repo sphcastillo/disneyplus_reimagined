@@ -1,6 +1,6 @@
 "use client";
 import useSWR from "swr";
-import { hubballi } from "@/utils/fonts/fonts";
+
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -34,7 +34,7 @@ function AISuggestion({ term }: { term: string }) {
                 <p className="text-sm text-gray-400">
                     AI Assistant Suggests:{' '}
                 </p>
-                <div className={`${hubballi.className}`}>
+                <div>
                     <p className="italic text-xl text-white">&quot;{data.message}&quot;</p>
                 </div>
             </div>

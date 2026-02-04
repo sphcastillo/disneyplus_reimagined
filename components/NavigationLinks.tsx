@@ -3,7 +3,7 @@ import { FaPlus, FaStar } from "react-icons/fa";
 import { PiFilmReelFill } from "react-icons/pi";
 import { TbDeviceTvOldFilled } from "react-icons/tb";
 import { MdOutlineMoreVert } from "react-icons/md";
-import { ramabhadra } from "@/utils/fonts/fonts";
+import { ramabhadra } from "@/utils/fonts";
 import Link from "next/link";
 
 function NavigationLinks() {

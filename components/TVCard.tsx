@@ -1,6 +1,6 @@
 import getImagePath from "@/lib/getImagePath";
 import { Series } from "@/typings";
-import { ramabhadra } from "@/utils/fonts/fonts";
+import { ramabhadra } from "@/utils/fonts";
 import Image from "next/image";
 
 

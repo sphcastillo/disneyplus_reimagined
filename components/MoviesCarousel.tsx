@@ -1,7 +1,7 @@
 import { Movie } from '@/typings';
 import MovieCard from './MovieCard';
 import { cn } from '@/lib/utils';
-import { quattrocentoSans } from '@/utils/fonts/fonts';
+import { quattrocentoSans } from '@/utils/fonts';
 
 // props for the MoviesCarousel component
 type Props = {

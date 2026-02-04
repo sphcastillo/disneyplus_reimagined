@@ -2,7 +2,7 @@ import MoviesCarousel from '@/components/MoviesCarousel';
 import AISearchSuggestion from '@/components/AISearchSuggestion';
 import { getPopularMovies, getSearchedMovies } from '@/lib/getMovies';
 import { notFound } from 'next/navigation';
-import { ramabhadra } from '@/utils/fonts/fonts';
+import { ramabhadra } from '@/utils/fonts';
 import MoviesShowcaseGrid from '@/components/MoviesShowcaseGrid';
 
 type SearchProps = {

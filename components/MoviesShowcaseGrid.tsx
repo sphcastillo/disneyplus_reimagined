@@ -1,6 +1,6 @@
 import { Movie } from "@/typings";
 import MovieCard from "./MovieCard";
-import { quattrocentoSans } from "@/utils/fonts/fonts";
+import { quattrocentoSans } from "@/utils/fonts";
 
 type Props = {
   title?: string;

@@ -1,13 +1,15 @@
 "use client";
 import { useState } from "react";
 import { X } from "lucide-react";
-
+import { usePathname } from "next/navigation";
 
 
 function SearchHintBubble() {
+  const pathname = usePathname();
   const [show, setShow] = useState(true);
 
-  if (!show) return null;
+  if (pathname !== "/" || !show) return null;
+  
   return (
     <div className='absolute top-16 mobile:top-[72px] xs:top-[76px] right-1 mx-2 z-50'>
       <div className="relative w-40 xxs:w-48 xs:w-48 md:w-48 bounce-hint-delay-1 rounded-lg pl-3 pr-1 py-2 overflow-hidden">

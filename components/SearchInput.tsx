@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { ramabhadra } from "@/utils/fonts/fonts";
+import { ramabhadra } from "@/utils/fonts";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 

@@ -35,7 +35,7 @@ export default async function OpenAISuggestion({ term }: Props) {
   const listItems = lines.length > 1 ? lines.slice(1) : lines;
 
   return (
-    <div className="p-10 pb-0">
+    <div className="p-6 xs:p-10 pb-0">
       <div className="relative overflow-hidden rounded-2xl border border-purple-500/40 bg-gradient-to-br from-purple-950/60 via-slate-900/80 to-indigo-950/50 shadow-xl shadow-purple-900/20 ring-1 ring-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(192,132,252,0.15),transparent)]" aria-hidden />
         <div className="relative p-6 sm:p-8">

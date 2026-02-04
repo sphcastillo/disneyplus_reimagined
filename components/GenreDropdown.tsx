@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ramabhadra } from "@/utils/fonts/fonts";
+import { ramabhadra } from "@/utils/fonts";
 import { ChevronDown } from "lucide-react";
 import { Genres } from "@/typings";
 

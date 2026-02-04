@@ -1,7 +1,7 @@
 import MoviesGrid from "@/components/MoviesGrid";
 import OpenAISuggestion from "@/components/OpenAISuggestion";
 import { getDiscoverMovies } from "@/lib/getMovies";
-import { ramabhadra, quattrocentoSans } from "@/utils/fonts/fonts";
+import { ramabhadra, quattrocentoSans } from "@/utils/fonts";
 
 type Props = {
     params: Promise<{ id: string }>;
@@ -32,7 +32,7 @@ async function GenrePage({ params, searchParams }: Props) {
             
             <div className='max-w-7xl mx-auto relative z-0'>
                 <div className={`${ramabhadra.className} pt-8`}>
-                    <div className="pt-[85px] pb-8 sm:pb-16">
+                    <div className="pt-10 xs:pt-16 pb-8 sm:pb-16">
                         <OpenAISuggestion term={genre} />
                     </div>
                     

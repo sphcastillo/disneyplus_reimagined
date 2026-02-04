@@ -1,7 +1,7 @@
 import getImagePath from "@/lib/getImagePath";
 import { Movie } from "@/typings";
 import Image from "next/image";
-import { ramabhadra } from "@/utils/fonts/fonts";
+import { ramabhadra } from "@/utils/fonts";
 
 
 const imageClassByVariant = {

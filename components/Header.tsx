@@ -9,7 +9,7 @@ import NavigationLinks from "./NavigationLinks";
 import { FaPlus, FaStar } from "react-icons/fa";
 import { PiFilmReelFill } from "react-icons/pi";
 import { TbDeviceTvOldFilled } from "react-icons/tb";
-import { ramabhadra } from "@/utils/fonts/fonts";
+import { ramabhadra } from "@/utils/fonts";
 import SearchHintBubble from "./SearchHintBubble";
 import GenreHintBubble from "./GenreHintBubble";
 

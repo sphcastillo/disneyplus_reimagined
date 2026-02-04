@@ -2,18 +2,17 @@
 import useSWR from "swr";
 import { hubballi } from "@/utils/fonts/fonts";
 
-const  fetcher = (term: string) =>
- fetch("/api/suggestions?term=" + term).then((res) => res.json());
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 function AISuggestion({ term }: { term: string }) {
     const { data, error, isLoading, isValidating } = useSWR(
-        "suggestions",
-        () => fetcher(term),
+        term ? `/api/suggestions?term=${encodeURIComponent(term)}` : null,
+        fetcher,
         {
-            revalidateOnFocus: false,
-            revalidateOnReconnect: false,
+          revalidateOnFocus: false,
+          revalidateOnReconnect: false,
         }
-    );
+      );
 
     const generateText = () => {
         if (isLoading || isValidating)
@@ -33,7 +32,7 @@ function AISuggestion({ term }: { term: string }) {
 
             <div>
                 <p className="text-sm text-gray-400">
-                    AI (Azure Functions) Assistant Suggests:{' '}
+                    AI Assistant Suggests:{' '}
                 </p>
                 <div className={`${hubballi.className}`}>
                     <p className="italic text-xl text-white">&quot;{data.message}&quot;</p>

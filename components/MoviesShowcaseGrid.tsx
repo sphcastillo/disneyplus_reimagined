@@ -5,12 +5,22 @@ import { quattrocentoSans } from "@/utils/fonts/fonts";
 type Props = {
   title?: string;
   movies: Movie[];
+  termToUse?: string;
 };
 
-function MoviesGrid({ title, movies }: Props) {
+function MoviesShowcaseGrid({ title, movies, termToUse }: Props) {
+  const heading = termToUse ? `Results for: ${termToUse}` : title;
+
   return (
     <div className="z-20">
-
+      {heading && (
+        <div className={`${quattrocentoSans.className} px-5 lg:px-10 pt-2 pb-4`}>
+          <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+            {heading}
+          </h2>
+          <div className="mt-2 h-0.5 w-96 rounded-full bg-gradient-to-r from-amber-400/80 via-purple-400/80 to-transparent" />
+        </div>
+      )}
       <div className="grid grid-cols-1 md:grid-cols-2 6xl:grid-cols-3 gap-6 px-5 lg:px-10 pb-10">
         {movies.map((movie) => (
           <article
@@ -20,7 +30,7 @@ function MoviesGrid({ title, movies }: Props) {
             <div className="absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_80%_50%_at_0%_0%,rgba(168,85,247,0.08),transparent_50%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden />
             <MovieCard movie={movie} variant="grid" />
             <div className="relative flex flex-1 flex-col p-5 sm:p-6 min-w-0">
-              <div className={`${quattrocentoSans.className}`}>
+              <div className={quattrocentoSans.className}>
                 <p className="font-bold text-white text-lg leading-tight sm:text-xl">
                   {movie.title}
                   <span className="ml-1.5 font-medium text-amber-200/90 text-base sm:text-lg">
@@ -41,4 +51,4 @@ function MoviesGrid({ title, movies }: Props) {
   );
 }
 
-export default MoviesGrid;
+export default MoviesShowcaseGrid;

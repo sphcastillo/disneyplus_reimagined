@@ -1,6 +1,5 @@
 import { OpenAI } from "openai";
 import Image from "next/image";
-import { hubballi } from "@/utils/fonts/fonts";
 import Lumiere from "@/public/images/Lumiere.png";
 
 type Props = { term: string };
@@ -50,7 +49,7 @@ export default async function OpenAISuggestion({ term }: Props) {
             />
             <span className="text-lg font-semibold text-purple-300 sm:text-xl">AI Assistant Suggests:</span>
           </div>
-          <div className={`${hubballi.className} pt-4 sm:pt-5`}>
+          <div className={`pt-4 sm:pt-5`}>
             {intro && (
               <p className="italic text-md sm:text-lg lg:text-xl text-white/95 mb-3 leading-relaxed">
                 {intro}

@@ -10,7 +10,7 @@ const imageClassByVariant = {
   compact:
     "w-fit max-w-[210px] h-32 sm:max-w-[230px] sm:h-34 md:max-w-[180px] md:h-28 object-cover object-center shadow-md shadow-black/40 drop-shadow-xl rounded-sm rounded-b-2xl",
   grid:
-    "w-full h-full min-h-[140px] object-cover object-center shadow-md shadow-black/40",
+    "w-full h-full min-h-[200px] object-cover object-top shadow-md shadow-black/40",
 };
 
 function MovieCard({
@@ -27,7 +27,7 @@ function MovieCard({
 
   if (variant === "grid") {
     return (
-      <div className="relative h-[140px] w-full flex-shrink-0 overflow-hidden rounded-t-xl">
+      <div className="relative h-[200px] w-full flex-shrink-0 overflow-hidden rounded-t-xl">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/20 to-gray-900/60 z-10" />
         <Image
           className={imageClass}

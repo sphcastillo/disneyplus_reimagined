@@ -17,7 +17,7 @@ async function GenrePage({ params, searchParams }: Props) {
 
     return (
         <div className="relative min-h-screen overflow-hidden">
-            <div className="fixed inset-0 bg-gradient-to-br from-[#0a0a0f] via-[#17171B] via-[#1a1625] to-[#0f0a1a] -z-10" />
+            <div className="fixed inset-0 bg-gradient-to-br from-[#0a0a0f] via-[#17171B] to-[#0f0a1a] -z-10" />
             
             <div className="fixed inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(120,119,198,0.08),transparent_50%)] -z-10" aria-hidden />
             <div className="fixed inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_100%,rgba(168,85,247,0.06),transparent_50%)] -z-10" aria-hidden />

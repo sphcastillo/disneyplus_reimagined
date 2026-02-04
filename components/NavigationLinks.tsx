@@ -31,7 +31,7 @@ function NavigationLinks() {
       </div>
       <div className="flex items-center space-x-2 text-white">
         <FaStar />
-        <span className="hidden lg:flex text-sm">Originals</span>
+        <span className="hidden 6xl:flex text-sm">Originals</span>
       </div>
 
       <div className="relative group flex items-center text-white sm:hidden">

@@ -3,7 +3,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import { Providers } from './providers';
 import Footer from '@/components/Footer';
-
+import { FathomAnalytics } from './fanthom';
 
 export const metadata: Metadata = {
   title: 'Disney+ Reimagined',
@@ -18,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className='bg-[#17171B]'>
+        <FathomAnalytics />
         <Providers>
           <Header />
           {children}

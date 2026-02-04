@@ -17,14 +17,11 @@ async function GenrePage({ params, searchParams }: Props) {
 
     return (
         <div className="relative min-h-screen overflow-hidden">
-            {/* Animated gradient background */}
             <div className="fixed inset-0 bg-gradient-to-br from-[#0a0a0f] via-[#17171B] via-[#1a1625] to-[#0f0a1a] -z-10" />
             
-            {/* Subtle mesh gradient overlay */}
             <div className="fixed inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(120,119,198,0.08),transparent_50%)] -z-10" aria-hidden />
             <div className="fixed inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_100%,rgba(168,85,247,0.06),transparent_50%)] -z-10" aria-hidden />
-            
-            {/* Subtle noise texture */}
+
             <div 
                 className="fixed inset-0 opacity-[0.015] -z-10"
                 style={{
@@ -39,7 +36,6 @@ async function GenrePage({ params, searchParams }: Props) {
                         <OpenAISuggestion term={genre} />
                     </div>
                     
-                    {/* Enhanced divider with gradient glow */}
                     <div className="relative px-5 lg:px-10">
                         <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                         <div className="absolute inset-0 h-px bg-gradient-to-r from-transparent via-purple-400/40 to-transparent blur-sm" aria-hidden />

@@ -1,29 +1,26 @@
-import dancingwiththestars from "@/images/hero/DancingWTheStarsABC.png";
-import liloandstitchliveaction from "@/images/hero/DisneyClassicStitch.png";
-import thunderbolts from "@/images/hero/MarvelThunderbolts.png";
-import highPotential from "@/images/hero/highPotentialHulu.png";
-import onlymurderersinthebuilding from "@/images/hero/huluOMITB.png";
-import scandal from "@/images/hero/ScandalABC.png";
-import starwarsAndor from '@/images/hero/StarWarsAndor.png';
-import taylorSwiftERAS from "@/images/hero/theErasTours.png";
-import theSimpsons from "@/images/hero/TheSimpsons.png";
+import highPotential from "@/public/images/hero/highPotentialHulu.png";
+import memoryofaKiller from '@/public/images/hero/memoryofakiller.png';
+import onlymurderersinthebuilding from "@/public/images/hero/huluOMITB.png";
+import tellMeLies from "@/public/images/hero/tellMeLies.png";
+import starwarsAndor from '@/public/images/hero/StarWarsAndor.png';
+import taylorSwiftERAS from "@/public/images/hero/theErasTours.png";
+import theSimpsons from "@/public/images/hero/theSimpsons2.png";
+import theMuppetShow from "@/public/images/hero/TheMuppetShow.png"
+import Springsteen from "@/public/images/hero/Springsteen.png";
+import fearFactor from "@/public/images/hero/fearFactor.png";
+
 
 export const HeroCarouselData = [
     {
         id: 1,
-        title: "Taylor Swift: The Eras Tour",
-        image: taylorSwiftERAS
+        title: "The Muppet Show",
+        image: theMuppetShow
     },
     {
         id: 2,
-        title: 'Lilo & Stitch',
-        image: liloandstitchliveaction
+        title: 'Memory of a Killer',
+        image: memoryofaKiller
     },
-    {
-        id: 3,
-        title: "Thunderbolts*",
-        image: thunderbolts
-    }, 
     {
         id: 4,
         title: "High Potential",
@@ -31,27 +28,33 @@ export const HeroCarouselData = [
     },
     {
         id: 5,
-        title: "Only Murderers in the Building",
-        image: onlymurderersinthebuilding
-    }, 
-    {
-        id: 6,
-        title: "Scandal",
-        image: scandal
+        title: "Taylor Swift: The Eras Tour",
+        image: taylorSwiftERAS
     },
     {
+        id: 6,
+        title: "Tell Me Lies",
+        image: tellMeLies
+    }, 
+    {
         id: 7,
+        title: "Springsteen",
+        image: Springsteen
+    },
+    {
+        id: 8,
         title: "Star Wars: Andor",
         image: starwarsAndor
     },    
     {
-        id: 8,
-        title: "Dancing with the Stars",
-        image: dancingwiththestars
+        id: 9,
+        title: "Fear Factor",
+        image: fearFactor
     },
     {
-        id: 9,
+        id: 10,
         title: "The Simpsons",
         image: theSimpsons
-    }
+    },
+
 ]

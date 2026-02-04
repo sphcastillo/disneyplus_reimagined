@@ -15,7 +15,7 @@ async function fetchFromTMDB(url: URL, cacheTime?: number) {
             Authorization: `Bearer ${process.env.TMBD_API_KEY}`
         },
         next: {
-            revalidate: cacheTime || 60 * 60 * 24, // 24 hours default 
+            revalidate: cacheTime || 60 * 60 * 24, 
         },
     };
 
@@ -27,7 +27,6 @@ async function fetchFromTMDB(url: URL, cacheTime?: number) {
 
 }
 
-// for our search - using discover function in TMDB
 
 export async function getDiscoverMovies(id?: string, keywords?: string) {
     const url = new URL(`https://api.themoviedb.org/3/discover/movie`);
@@ -39,7 +38,7 @@ export async function getDiscoverMovies(id?: string, keywords?: string) {
     return data.results;
 };
 
-// takes term and returns searched movies
+
 export async function getSearchedMovies(term: string) {
 
     const url = new URL("https://api.themoviedb.org/3/search/movie");
@@ -56,7 +55,7 @@ export async function getSearchedMovies(term: string) {
             Authorization: `Bearer ${process.env.TMBD_API_KEY}`
         },
         next: {
-            revalidate: 60 * 60 * 24, // 24 hours default 
+            revalidate: 60 * 60 * 24, 
         },
     };
 

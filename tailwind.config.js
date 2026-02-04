@@ -106,6 +106,10 @@ module.exports = {
           "0%": { transform: "scale(1.1)" },
           "100%": { transform: "scale(1)" },
         },
+        shimmer: {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
         "accordion-down": {
           from: { height: 0 },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -119,6 +123,7 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         zoomOut : "zoomOut 1.5s ease-out",
+        shimmer: "shimmer 3s ease-in-out infinite",
       },
     },
   },

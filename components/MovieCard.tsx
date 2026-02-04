@@ -4,7 +4,43 @@ import Image from "next/image";
 import { ramabhadra } from "@/utils/fonts/fonts";
 
 
-function MovieCard({ movie }: { movie: Movie }) {
+const imageClassByVariant = {
+  default:
+    "w-fit max-w-[210px] h-32 sm:max-w-[230px] sm:h-34 md:max-w-[280px] md:h-42 object-cover object-center shadow-md shadow-black/40 drop-shadow-xl rounded-sm rounded-b-2xl",
+  compact:
+    "w-fit max-w-[210px] h-32 sm:max-w-[230px] sm:h-34 md:max-w-[180px] md:h-28 object-cover object-center shadow-md shadow-black/40 drop-shadow-xl rounded-sm rounded-b-2xl",
+  grid:
+    "w-full h-full min-h-[140px] object-cover object-center shadow-md shadow-black/40",
+};
+
+function MovieCard({
+  movie,
+  compact,
+  variant = "default",
+}: {
+  movie: Movie;
+  compact?: boolean;
+  variant?: "default" | "compact" | "grid";
+}) {
+  const mode = variant === "grid" ? "grid" : compact ? "compact" : "default";
+  const imageClass = imageClassByVariant[mode];
+
+  if (variant === "grid") {
+    return (
+      <div className="relative h-[140px] w-full flex-shrink-0 overflow-hidden rounded-t-xl">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/20 to-gray-900/60 z-10" />
+        <Image
+          className={imageClass}
+          src={getImagePath(movie.backdrop_path || movie.poster_path)}
+          alt={movie.title}
+          width={1920}
+          height={1080}
+          key={movie.id}
+        />
+      </div>
+    );
+  }
+
   return (
     <>
       <div
@@ -17,7 +53,7 @@ function MovieCard({ movie }: { movie: Movie }) {
           </p>
         </div>
         <Image
-          className="w-fit max-w-[210px] h-32 sm:max-w-[230px] sm:h-34 md:max-w-[280px] md:h-42 object-cover object-center shadow-md shadow-black/40 drop-shadow-xl rounded-sm rounded-b-2xl"
+          className={imageClass}
           src={getImagePath(movie.backdrop_path || movie.poster_path)}
           alt={movie.title}
           width={1920}

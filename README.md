@@ -44,3 +44,6 @@ Professional website: https://www.builtbysophia.com,
 GitHub: https://github.com/sphcastillo,
 
 LinkedIn: www.linkedin.com/in/sophiacastillo-ca
+
+
+* Swapping the Azure OpenAI client for the OpenAI API>
